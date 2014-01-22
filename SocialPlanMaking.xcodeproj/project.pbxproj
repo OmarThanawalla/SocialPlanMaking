@@ -22,6 +22,8 @@
 		A7633B7D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
 		A7633B85188FA80900D1BE77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7633B83188FA80900D1BE77 /* InfoPlist.strings */; };
 		A7633B87188FA80900D1BE77 /* SocialPlanMakingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B86188FA80900D1BE77 /* SocialPlanMakingTests.m */; };
+		A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B91188FAF2300D1BE77 /* Inbox.m */; };
+		A7633B95188FB6E200D1BE77 /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B94188FB6E200D1BE77 /* Activities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		A7633B82188FA80900D1BE77 /* SocialPlanMakingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialPlanMakingTests-Info.plist"; sourceTree = "<group>"; };
 		A7633B84188FA80900D1BE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A7633B86188FA80900D1BE77 /* SocialPlanMakingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialPlanMakingTests.m; sourceTree = "<group>"; };
+		A7633B90188FAF2300D1BE77 /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inbox.h; sourceTree = "<group>"; };
+		A7633B91188FAF2300D1BE77 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inbox.m; sourceTree = "<group>"; };
+		A7633B93188FB6E200D1BE77 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
+		A7633B94188FB6E200D1BE77 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				A7633B67188FA80900D1BE77 /* AppDelegate.h */,
 				A7633B68188FA80900D1BE77 /* AppDelegate.m */,
 				A7633B6A188FA80900D1BE77 /* Main.storyboard */,
+				A7633B90188FAF2300D1BE77 /* Inbox.h */,
+				A7633B91188FAF2300D1BE77 /* Inbox.m */,
+				A7633B93188FB6E200D1BE77 /* Activities.h */,
+				A7633B94188FB6E200D1BE77 /* Activities.m */,
 				A7633B6D188FA80900D1BE77 /* FirstViewController.h */,
 				A7633B6E188FA80900D1BE77 /* FirstViewController.m */,
 				A7633B70188FA80900D1BE77 /* SecondViewController.h */,
@@ -254,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
 				A7633B72188FA80900D1BE77 /* SecondViewController.m in Sources */,
+				A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */,
 				A7633B69188FA80900D1BE77 /* AppDelegate.m in Sources */,
 				A7633B6F188FA80900D1BE77 /* FirstViewController.m in Sources */,
 				A7633B65188FA80900D1BE77 /* main.m in Sources */,
