@@ -24,6 +24,8 @@
 		A7633B87188FA80900D1BE77 /* SocialPlanMakingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B86188FA80900D1BE77 /* SocialPlanMakingTests.m */; };
 		A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B91188FAF2300D1BE77 /* Inbox.m */; };
 		A7633B95188FB6E200D1BE77 /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B94188FB6E200D1BE77 /* Activities.m */; };
+		A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B971890203900D1BE77 /* ChooseFriends.m */; };
+		A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B9A189021FF00D1BE77 /* InboxIndepth.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		A7633B91188FAF2300D1BE77 /* Inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inbox.m; sourceTree = "<group>"; };
 		A7633B93188FB6E200D1BE77 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
 		A7633B94188FB6E200D1BE77 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		A7633B961890203900D1BE77 /* ChooseFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseFriends.h; sourceTree = "<group>"; };
+		A7633B971890203900D1BE77 /* ChooseFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseFriends.m; sourceTree = "<group>"; };
+		A7633B99189021FF00D1BE77 /* InboxIndepth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxIndepth.h; sourceTree = "<group>"; };
+		A7633B9A189021FF00D1BE77 /* InboxIndepth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxIndepth.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,10 @@
 				A7633B67188FA80900D1BE77 /* AppDelegate.h */,
 				A7633B68188FA80900D1BE77 /* AppDelegate.m */,
 				A7633B6A188FA80900D1BE77 /* Main.storyboard */,
+				A7633B99189021FF00D1BE77 /* InboxIndepth.h */,
+				A7633B9A189021FF00D1BE77 /* InboxIndepth.m */,
+				A7633B961890203900D1BE77 /* ChooseFriends.h */,
+				A7633B971890203900D1BE77 /* ChooseFriends.m */,
 				A7633B90188FAF2300D1BE77 /* Inbox.h */,
 				A7633B91188FAF2300D1BE77 /* Inbox.m */,
 				A7633B93188FB6E200D1BE77 /* Activities.h */,
@@ -265,9 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
+				A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */,
 				A7633B72188FA80900D1BE77 /* SecondViewController.m in Sources */,
 				A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */,
 				A7633B69188FA80900D1BE77 /* AppDelegate.m in Sources */,
+				A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */,
 				A7633B6F188FA80900D1BE77 /* FirstViewController.m in Sources */,
 				A7633B65188FA80900D1BE77 /* main.m in Sources */,
 			);

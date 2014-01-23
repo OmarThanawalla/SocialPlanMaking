@@ -30,7 +30,7 @@
 
     NSLog(@"Activities: ViewDidLoad");
     self.title = @"Create Activities";
-    self.temp2 = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
+    self.temp2 = @[@"1: ", @"2: ", @"3: ",@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -70,6 +70,13 @@
     cell.textLabel.text = self.temp2[indexPath.row];
     return cell;
 }
+//- (void)tableView:(UITableView *)sender didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"Actvitity: didSelectRowAtIndexPath called");
+//    
+//    [self performSegueWithIdentifier:@"TimeSelection" sender:self];
+//    
+//}
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -1,20 +1,18 @@
 //
-//  Inbox.m
+//  ChooseFriends.m
 //  SocialPlanMaking
 //
 //  Created by Omar Thanawalla on 1/22/14.
 //  Copyright (c) 2014 Omar Thanawalla. All rights reserved.
 //
 
-#import "Inbox.h"
+#import "ChooseFriends.h"
 
-@interface Inbox ()
-
-@property (nonatomic, strong) NSArray * temp;
+@interface ChooseFriends ()
 
 @end
 
-@implementation Inbox
+@implementation ChooseFriends
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,12 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Inbox: ViewDidLoad");
-    self.title = @"Inbox of Activities";
-    
-    
-    self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -51,17 +44,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"the self.temp count is: %d",[self.temp count]);
-    return [self.temp count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,13 +62,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = self.temp[indexPath.row];
+    
     return cell;
-}
-- (void)tableView:(UITableView *)sender didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath called");
-    [self performSegueWithIdentifier:@"ViewActivity" sender:self];
-
 }
 
 /*
@@ -130,4 +117,8 @@
 
  */
 
+- (IBAction)Broadcast:(id)sender {
+    NSLog(@"Broadcast button was pushed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
