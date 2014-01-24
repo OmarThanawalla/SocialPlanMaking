@@ -129,7 +129,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="YvN-zM-0Eu" kind="push" identifier="ViewActivity" id="8dE-oZ-1zp"/>
-                        <segue destination="hcA-Sf-nw1" kind="modal" identifier="Login" animates="NO" id="GMA-y0-xip"/>
+                        <segue destination="gQ9-AE-8oL" kind="modal" identifier="Login" animates="NO" id="GMA-y0-xip"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q6-87-mMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,33 +309,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-fD-SRK">
-                                <rect key="frame" x="89" y="273" width="143" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URF-Id-tyH" customClass="FBLoginView">
+                                <rect key="frame" x="65" y="351" width="191" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hcA-Sf-nw1" id="qdJ-ZD-3Tn"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-dB-DyS">
+                                <rect key="frame" x="129" y="153" width="62" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-o9-4MU">
-                                <rect key="frame" x="137" y="372" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginBtn:" destination="hcA-Sf-nw1" eventType="touchUpInside" id="eXz-Xc-S0z"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URF-Id-tyH" customClass="FBLoginView">
-                                <rect key="frame" x="65" y="91" width="191" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f7t-uX-ZIQ"/>
+                    <connections>
+                        <segue destination="yg9-g7-Gkj" kind="push" identifier="InviteFriends" id="owZ-cV-CrC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZT-ur-FMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="-1716"/>
+            <point key="canvasLocation" x="1671" y="-1708"/>
+        </scene>
+        <!--Find Friends - Find Friends!-->
+        <scene sceneID="uCJ-8G-QcS">
+            <objects>
+                <tableViewController id="yg9-g7-Gkj" customClass="FindFriends" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qud-Cn-qUL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Friend" id="vXf-zd-W2H">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vXf-zd-W2H" id="TJ5-BL-saB">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yg9-g7-Gkj" id="hHg-lg-YXI"/>
+                            <outlet property="delegate" destination="yg9-g7-Gkj" id="P9I-sd-HRb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Find Friends!" id="8Jw-2S-GdX">
+                        <barButtonItem key="rightBarButtonItem" title="Friend All" id="GVz-TP-FBt"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cH-hm-6be" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2175" y="-1708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zY5-Vn-3Sx">
@@ -373,6 +402,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yy-Jh-Rb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="807" y="1158"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NlZ-M0-ca9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gQ9-AE-8oL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zfk-oL-XX3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hcA-Sf-nw1" kind="relationship" relationship="rootViewController" id="5OT-86-9g3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPN-W3-dqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="-1708"/>
         </scene>
     </scenes>
     <resources>
