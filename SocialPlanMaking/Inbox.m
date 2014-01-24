@@ -31,6 +31,10 @@
     NSLog(@"Inbox: ViewDidLoad");
     self.title = @"Inbox of Activities";
     
+    //Show the Login view
+    [self performSegueWithIdentifier:@"Login" sender:self];
+
+    
     
     self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
     
