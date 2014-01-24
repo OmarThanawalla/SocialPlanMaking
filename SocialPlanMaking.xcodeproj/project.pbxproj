@@ -27,6 +27,7 @@
 		A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B971890203900D1BE77 /* ChooseFriends.m */; };
 		A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B9A189021FF00D1BE77 /* InboxIndepth.m */; };
 		A7633B9E1892301000D1BE77 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B9D1892301000D1BE77 /* Login.m */; };
+		A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		A7633B9A189021FF00D1BE77 /* InboxIndepth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxIndepth.m; sourceTree = "<group>"; };
 		A7633B9C1892301000D1BE77 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		A7633B9D1892301000D1BE77 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */,
+				A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */,
 				A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */,
 				A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */,
 			);
@@ -119,6 +122,7 @@
 		A7633B57188FA80900D1BE77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */,
 				A7633B58188FA80900D1BE77 /* Foundation.framework */,
 				A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */,
 				A7633B5C188FA80900D1BE77 /* UIKit.framework */,
@@ -414,6 +418,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/omarthanawalla/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
@@ -427,6 +435,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/omarthanawalla/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
@@ -496,6 +508,7 @@
 				A7633B8C188FA80900D1BE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7633B8D188FA80900D1BE77 /* Build configuration list for PBXNativeTarget "SocialPlanMakingTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +517,7 @@
 				A7633B8F188FA80900D1BE77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

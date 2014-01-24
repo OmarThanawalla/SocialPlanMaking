@@ -281,7 +281,6 @@
         <!--Navigation Controller - Inbox-->
         <scene sceneID="0A3-mO-JiF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PSx-Zj-9lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cI3-PJ-p8q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inbox" image="first" id="u1e-5L-l1D"/>
                     <toolbarItems/>
@@ -294,6 +293,7 @@
                         <segue destination="E2D-3h-c5o" kind="relationship" relationship="rootViewController" id="YRH-6v-JeW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSx-Zj-9lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="-216"/>
         </scene>
@@ -325,6 +325,10 @@
                                     <action selector="loginBtn:" destination="hcA-Sf-nw1" eventType="touchUpInside" id="eXz-Xc-S0z"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URF-Id-tyH" customClass="FBLoginView">
+                                <rect key="frame" x="65" y="91" width="191" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
