@@ -9,6 +9,8 @@
 #import "Login.h"
 
 @interface Login ()
+@property (nonatomic, assign) BOOL firstTime;
+@property (nonatomic, assign) BOOL goOnce;
 
 @end
 
@@ -28,6 +30,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"Login: viewDidLoad");
+    self.firstTime = YES;
+    self.goOnce = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,13 +52,11 @@
     NSLog(@"The user.last_name is: %@",user.last_name);
     NSLog(@"The user.id is: %@", user.id);
     
-//    BOOL firstTime = YES;
-//    if (firstTime) {
-//        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
-//    }
-//    else{
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//    }
+    if (self.firstTime && self.goOnce) {
+        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
+        self.goOnce = NO;
+    }
+    
     
 }
 

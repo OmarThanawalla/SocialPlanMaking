@@ -8,10 +8,11 @@
 
 #import "FindFriends.h"
 #import "FindFriendsCell.h"
+#import "InviteFriendCell.h"
 
 @interface FindFriends ()
 @property (nonatomic,strong) NSArray * listOfFriends;
-
+@property (nonatomic,strong) NSArray * listOfFriendsToInvite;
 @end
 
 @implementation FindFriends
@@ -35,6 +36,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.listOfFriends = @[@"Richie Sweeney",@"Clay Tobolka", @"Imran Jeddy"];
+    self.listOfFriendsToInvite = @[@"Neal Bh",@"Chase Fieger", @"Raheel Poonja"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,72 +55,61 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.listOfFriends count];
+    
+    NSLog(@"complete list is: %i", [self.listOfFriends count] +[self.listOfFriendsToInvite count] + 1);
+    
+    return ([self.listOfFriends count] +[self.listOfFriendsToInvite count] + 1);
+    
+    
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Friend";
-    FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     
-    // Configure the cell...
-    //cell.Name.text = self.listOfFriends[indexPath.row];
+    if(indexPath.row < [self.listOfFriends count])
+    {
+        static NSString *CellIdentifier = @"Friend";
+        FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        cell.Name.text = self.listOfFriends[indexPath.row];
+        return cell;
+    }
+    else if (indexPath.row == [self.listOfFriends count]) {
+        static NSString *CellIdentifier = @"Friend";
+        FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+        // Configure the cell...
+        cell.Name.text = @"Invite Friends";
+        [cell setBackgroundColor:[UIColor orangeColor]];
+        return cell;
+    }
+    else //Invited Friends List
+    {
+        static NSString *CellIdentifier = @"FriendToInvite";
+        InviteFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        
+        // Configure the cell...
+        cell.Name.text = self.listOfFriends[(indexPath.row - [self.listOfFriends count] -1 )];
+        return cell;
+    }
     
-    return cell;
+    
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)friendAllBtn:(id)sender {
+    NSLog(@"Friend All btn pushed");
 }
 
- */
+- (IBAction)DoneBtn:(id)sender {
+    NSLog(@"Done btn psuhed");
+    [self dismissViewControllerAnimated:YES completion:nil];
 
+}
 @end

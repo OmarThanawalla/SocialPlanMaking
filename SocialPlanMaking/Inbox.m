@@ -32,7 +32,7 @@
     self.title = @"Inbox of Activities";
     
     //Show the Login view
-    [self performSegueWithIdentifier:@"Login" sender:self];
+    //[self performSegueWithIdentifier:@"Login" sender:self];
 
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -28,7 +29,6 @@
 		A7633B9E1892301000D1BE77 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = A7633B9D1892301000D1BE77 /* Login.m */; };
 		A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */; };
 		A7D92517189300E000030B6D /* FindFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D92516189300E000030B6D /* FindFriends.m */; };
-		A7D92519189306CB00030B6D /* AppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D92518189306CB00030B6D /* AppStore.png */; };
 		A7D9251C1893070200030B6D /* FindFriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D9251B1893070200030B6D /* FindFriendsCell.m */; };
 		A7D9251E1893071C00030B6D /* FindFriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D9251D1893071C00030B6D /* FindFriendsCell.xib */; };
 /* End PBXBuildFile section */
@@ -44,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
+		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,7 +78,6 @@
 		A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		A7D92515189300E000030B6D /* FindFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriends.h; sourceTree = "<group>"; };
 		A7D92516189300E000030B6D /* FindFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriends.m; sourceTree = "<group>"; };
-		A7D92518189306CB00030B6D /* AppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppStore.png; path = ../../../CS370/AppStore.png; sourceTree = "<group>"; };
 		A7D9251A1893070200030B6D /* FindFriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindFriendsCell.h; sourceTree = "<group>"; };
 		A7D9251B1893070200030B6D /* FindFriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindFriendsCell.m; sourceTree = "<group>"; };
 		A7D9251D1893071C00030B6D /* FindFriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FindFriendsCell.xib; path = ../FindFriendsCell.xib; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		A7633B5F188FA80900D1BE77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A7D92518189306CB00030B6D /* AppStore.png */,
 				A7633B60188FA80900D1BE77 /* SocialPlanMaking-Info.plist */,
 				A7633B61188FA80900D1BE77 /* InfoPlist.strings */,
 				A7633B64188FA80900D1BE77 /* main.m */,
@@ -225,6 +225,8 @@
 				A7D9251A1893070200030B6D /* FindFriendsCell.h */,
 				A7D9251B1893070200030B6D /* FindFriendsCell.m */,
 				A7D9251D1893071C00030B6D /* FindFriendsCell.xib */,
+				A74D308618936F5B0023DEE7 /* InviteFriendCell.h */,
+				A74D308718936F5B0023DEE7 /* InviteFriendCell.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -306,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7633B74188FA80900D1BE77 /* Images.xcassets in Resources */,
-				A7D92519189306CB00030B6D /* AppStore.png in Resources */,
 				A7633B63188FA80900D1BE77 /* InfoPlist.strings in Resources */,
 				A7D9251E1893071C00030B6D /* FindFriendsCell.xib in Resources */,
 				A7633B6C188FA80900D1BE77 /* Main.storyboard in Resources */,
@@ -337,6 +338,7 @@
 				A7633B69188FA80900D1BE77 /* AppDelegate.m in Sources */,
 				A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */,
 				A7D9251C1893070200030B6D /* FindFriendsCell.m in Sources */,
+				A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */,
 				A7633B65188FA80900D1BE77 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

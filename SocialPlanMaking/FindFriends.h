@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FindFriends : UITableViewController
+- (IBAction)friendAllBtn:(id)sender;
 
 @end
