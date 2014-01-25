@@ -60,13 +60,17 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.temp2 count];
+    return 2;//[self.temp2 count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Box";
+    NSLog(@"cellForRow caled");
+    static NSString *CellIdentifier = @"Boxer";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        NSLog(@"cell is nil");
+    }
     
     // Configure the cell...
     cell.textLabel.text = self.temp2[indexPath.row];

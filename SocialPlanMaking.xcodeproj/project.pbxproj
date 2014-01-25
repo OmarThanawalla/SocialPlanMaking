@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
+		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
+		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
+		A74D308A189384430023DEE7 /* PickActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickActivitiesViewController.m; path = ../PickActivitiesViewController.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74D308C189384600023DEE7 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				A74D3089189384430023DEE7 /* PickActivitiesViewController.h */,
+				A74D308A189384430023DEE7 /* PickActivitiesViewController.m */,
+				A7633B93188FB6E200D1BE77 /* Activities.h */,
+				A7633B94188FB6E200D1BE77 /* Activities.m */,
+				A7633B961890203900D1BE77 /* ChooseFriends.h */,
+				A7633B971890203900D1BE77 /* ChooseFriends.m */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
 		A7633B4C188FA80800D1BE77 = {
 			isa = PBXGroup;
 			children = (
@@ -190,10 +206,7 @@
 				A7633B91188FAF2300D1BE77 /* Inbox.m */,
 				A7633B99189021FF00D1BE77 /* InboxIndepth.h */,
 				A7633B9A189021FF00D1BE77 /* InboxIndepth.m */,
-				A7633B93188FB6E200D1BE77 /* Activities.h */,
-				A7633B94188FB6E200D1BE77 /* Activities.m */,
-				A7633B961890203900D1BE77 /* ChooseFriends.h */,
-				A7633B971890203900D1BE77 /* ChooseFriends.m */,
+				A74D308C189384600023DEE7 /* Create */,
 				A7D925141892F30A00030B6D /* Login */,
 			);
 			name = Tab1;
@@ -329,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */,
 				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
 				A7D92517189300E000030B6D /* FindFriends.m in Sources */,
 				A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */,
