@@ -26,4 +26,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)friendMe:(id)sender {
+    NSLog(@"You hit the friendMe method");
+}
 @end

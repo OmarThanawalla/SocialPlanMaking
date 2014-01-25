@@ -7,6 +7,7 @@
 //
 
 #import "FindFriends.h"
+#import "FindFriendsCell.h"
 
 @interface FindFriends ()
 @property (nonatomic,strong) NSArray * listOfFriends;
@@ -60,10 +61,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Friend";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
     
     // Configure the cell...
-    cell.textLabel.text = self.listOfFriends[indexPath.row];
+    //cell.Name.text = self.listOfFriends[indexPath.row];
     
     return cell;
 }

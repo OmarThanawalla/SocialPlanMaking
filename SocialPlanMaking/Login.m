@@ -48,13 +48,13 @@
     NSLog(@"The user.last_name is: %@",user.last_name);
     NSLog(@"The user.id is: %@", user.id);
     
-    BOOL firstTime = YES;
-    if (firstTime) {
-        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
-    }
-    else{
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+//    BOOL firstTime = YES;
+//    if (firstTime) {
+//        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
+//    }
+//    else{
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//    }
     
 }
 
