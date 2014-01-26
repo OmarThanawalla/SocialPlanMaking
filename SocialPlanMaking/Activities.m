@@ -66,7 +66,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"cellForRow caled");
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Boxer";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         NSLog(@"cell is nil");
