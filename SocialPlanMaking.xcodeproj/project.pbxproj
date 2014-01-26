@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB1EE17B55F42D7A4093556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950D61AA0A3D4056AAE4C48F /* libPods.a */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
+		A74D3090189505260023DEE7 /* Activities.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74D308F189505260023DEE7 /* Activities.xib */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -45,10 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		950D61AA0A3D4056AAE4C48F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98699DD466734221B1AFFC26 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
 		A74D308A189384430023DEE7 /* PickActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickActivitiesViewController.m; path = ../PickActivitiesViewController.m; sourceTree = "<group>"; };
+		A74D308F189505260023DEE7 /* Activities.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Activities.xib; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +100,7 @@
 				A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */,
 				A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */,
 				A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */,
+				7FB1EE17B55F42D7A4093556 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +137,7 @@
 				A7633B80188FA80900D1BE77 /* SocialPlanMakingTests */,
 				A7633B57188FA80900D1BE77 /* Frameworks */,
 				A7633B56188FA80900D1BE77 /* Products */,
+				98699DD466734221B1AFFC26 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +158,7 @@
 				A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */,
 				A7633B5C188FA80900D1BE77 /* UIKit.framework */,
 				A7633B7A188FA80900D1BE77 /* XCTest.framework */,
+				950D61AA0A3D4056AAE4C48F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				A7633B67188FA80900D1BE77 /* AppDelegate.h */,
 				A7633B68188FA80900D1BE77 /* AppDelegate.m */,
 				A7633B6A188FA80900D1BE77 /* Main.storyboard */,
+				A74D308F189505260023DEE7 /* Activities.xib */,
 				A7D925111892F2E000030B6D /* Tab1 */,
 				A7D925121892F2E600030B6D /* Tab2 */,
 				A7D925131892F2EC00030B6D /* Tab3 */,
@@ -251,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7633B8A188FA80900D1BE77 /* Build configuration list for PBXNativeTarget "SocialPlanMaking" */;
 			buildPhases = (
+				CB39FEB457404CC8B040D78E /* Check Pods Manifest.lock */,
 				A7633B51188FA80900D1BE77 /* Sources */,
 				A7633B52188FA80900D1BE77 /* Frameworks */,
 				A7633B53188FA80900D1BE77 /* Resources */,
+				2A778EBDAB7E479A9410CEBF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74D3090189505260023DEE7 /* Activities.xib in Resources */,
 				A7633B74188FA80900D1BE77 /* Images.xcassets in Resources */,
 				A7633B63188FA80900D1BE77 /* InfoPlist.strings in Resources */,
 				A7D9251E1893071C00030B6D /* FindFriendsCell.xib in Resources */,
@@ -336,6 +348,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A778EBDAB7E479A9410CEBF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB39FEB457404CC8B040D78E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7633B51188FA80900D1BE77 /* Sources */ = {
@@ -477,6 +522,7 @@
 		};
 		A7633B8B188FA80900D1BE77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98699DD466734221B1AFFC26 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -494,6 +540,7 @@
 		};
 		A7633B8C188FA80900D1BE77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98699DD466734221B1AFFC26 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

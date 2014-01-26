@@ -7,6 +7,8 @@
 //
 
 #import "Inbox.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 @interface Inbox ()
 
@@ -37,6 +39,30 @@
     
     
     self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
+    
+    
+    //sample GET Request
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk" parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"JSON: %@",responseObject);
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@",error);
+         }];
+    
+    
+    
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    
+//    AFHTTPRequestOperationManager * manager2 = [AFHTTPRequestOperationManager manager];
+//    NSDictionary *parameters = @{@"foo",@"bar"};
+//    [manager2 POST:@"postToSomething" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"T");
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Sup");
+//    }];
+//    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
