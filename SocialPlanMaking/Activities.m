@@ -30,7 +30,7 @@
 
     NSLog(@"Activities: ViewDidLoad");
     self.title = @"Create Activities";
-    self.temp2 = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
+    self.temp2 = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis",@"Tailgating @ McCombs Plaza", @"Surfing @ Corpus Christie",@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis",@"Tailgating @ McCombs Plaza", @"Surfing @ Corpus Christie"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -60,7 +60,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 2;//[self.temp2 count];
+    return [self.temp2 count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,7 +71,7 @@
     
     
     // Configure the cell...
-   // cell.textLabel.text = self.temp2[indexPath.row];
+    cell.textLabel.text = self.temp2[indexPath.row];
     return cell;
 }
 

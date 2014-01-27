@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PickActivitiesViewController : UIViewController
+- (IBAction)Cancel:(id)sender;
 
 @end
