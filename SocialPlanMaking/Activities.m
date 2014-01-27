@@ -66,11 +66,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"cellForRow caled");
-    static NSString *CellIdentifier = @"Boxer";
+    static NSString *CellIdentifier = @"Ferrari";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        NSLog(@"cell is nil");
-    }
+    
     
     // Configure the cell...
    // cell.textLabel.text = self.temp2[indexPath.row];

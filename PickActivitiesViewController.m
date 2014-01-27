@@ -30,8 +30,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"PickActivitiesVC loaded");
     
-    self.myActivities = [[Activities alloc] init];
-    //[self.view addSubview:self.myActivities.view];
+   
     
 }
 
