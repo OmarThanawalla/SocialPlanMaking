@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DateCell : UICollectionViewCell
+@property (strong, nonatomic) IBOutlet UILabel *text;
 
 @end

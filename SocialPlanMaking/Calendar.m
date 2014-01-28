@@ -7,6 +7,7 @@
 //
 
 #import "Calendar.h"
+#import "DateCell.h"
 
 @interface Calendar ()
 
@@ -50,17 +51,99 @@
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Time" forIndexPath:indexPath];
+    DateCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Time" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor redColor];
     
     if(indexPath.section == 0)
     {
         switch (indexPath.row) {
-            case 0:
-                cell.
+//            case 0:
+//                cell.text.text = @"12PM";
+//                break;
+            case 1:
+                cell.text.text = @"1PM";
+                break;
+            case 2:
+                cell.text.text = @"2PM";
+                break;
+            case 3:
+                cell.text.text = @"3PM";
+                break;
+            case 4:
+                cell.text.text = @"4PM";
+                break;
+            case 5:
+                cell.text.text = @"5PM";
+                break;
+            case 6:
+                cell.text.text = @"6PM";
+                break;
+            case 7:
+                cell.text.text = @"7PM";
+                break;
+            case 8:
+                cell.text.text = @"8PM";
+                break;
+            case 9:
+                cell.text.text = @"9PM";
+                break;
+            case 10:
+                cell.text.text = @"10PM";
+                break;
+            case 11:
+                cell.text.text = @"11PM";
+                break;
+            case 12:
+                cell.text.text = @"12AM";
                 break;
                 
+                
+            default:
+                break;
+        }
+    }
+    if (indexPath.row == 0) {
+        switch (indexPath.section) {
+            
+            case 1:
+                cell.text.text = @"M";
+                break;
+            case 2:
+                cell.text.text = @"Tu";
+                break;
+            case 3:
+                cell.text.text = @"W";
+                break;
+            case 4:
+                cell.text.text = @"Th";
+                break;
+            case 5:
+                cell.text.text = @"F";
+                break;
+            case 6:
+                cell.text.text = @"Sa";
+                break;
+            case 7:
+                cell.text.text = @"Sun";
+                break;
+            case 8:
+                cell.text.text = @"";
+                break;
+            case 9:
+                cell.text.text = @"";
+                break;
+            case 10:
+                cell.text.text = @"";
+                break;
+            case 11:
+                cell.text.text = @"";
+                break;
+            case 12:
+                cell.text.text = @"";
+                break;
+        
+        
             default:
                 break;
         }
