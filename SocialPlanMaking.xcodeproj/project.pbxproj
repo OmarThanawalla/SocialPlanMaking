@@ -10,6 +10,8 @@
 		7FB1EE17B55F42D7A4093556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950D61AA0A3D4056AAE4C48F /* libPods.a */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
+		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
+		A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314F1897A1EC0023DEE7 /* DateCell.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -52,6 +54,10 @@
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
 		A74D308A189384430023DEE7 /* PickActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PickActivitiesViewController.m; path = ../PickActivitiesViewController.m; sourceTree = "<group>"; };
+		A74D314B18979BFD0023DEE7 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
+		A74D314C18979BFD0023DEE7 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
+		A74D314E1897A1EC0023DEE7 /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
+		A74D314F1897A1EC0023DEE7 /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,10 @@
 				A74D308A189384430023DEE7 /* PickActivitiesViewController.m */,
 				A7633B93188FB6E200D1BE77 /* Activities.h */,
 				A7633B94188FB6E200D1BE77 /* Activities.m */,
+				A74D314B18979BFD0023DEE7 /* Calendar.h */,
+				A74D314C18979BFD0023DEE7 /* Calendar.m */,
+				A74D314E1897A1EC0023DEE7 /* DateCell.h */,
+				A74D314F1897A1EC0023DEE7 /* DateCell.m */,
 				A7633B961890203900D1BE77 /* ChooseFriends.h */,
 				A7633B971890203900D1BE77 /* ChooseFriends.m */,
 			);
@@ -384,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */,
+				A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */,
+				A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */,
 				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
 				A7D92517189300E000030B6D /* FindFriends.m in Sources */,
 				A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */,
