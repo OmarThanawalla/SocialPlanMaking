@@ -28,6 +28,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UISwipeGestureRecognizer * swipeMeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(cellSwipe:)];
+    swipeMeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.collectionView addGestureRecognizer:swipeMeDown];
 }
 
 - (void)didReceiveMemoryWarning
@@ -156,19 +160,30 @@
 
 
 #pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // TODO: Select Item
-    NSLog(@"did touch cell");
-    NSLog(@"index: %i",indexPath.row);
-    NSLog(@"section: %i",indexPath.section);
-    
-    
-    
-}
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // TODO: Select Item
+//    NSLog(@"did touch cell");
+//    NSLog(@"index: %i",indexPath.row);
+//    NSLog(@"section: %i",indexPath.section);
+//    
+//    
+//    
+//}
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
     
+}
+
+-(void)cellSwipe:(UISwipeGestureRecognizer *)gesture
+{
+    NSLog(@"cellSwipe");
+    CGPoint location = [gesture locationInView:self.collectionView];
+    NSIndexPath *swipedIndexPath = [self.collectionView indexPathForItemAtPoint:location];
+    NSLog(@"index: %i",swipedIndexPath.row);
+    NSLog(@"section: %i",swipedIndexPath.section);
+    
+    //DateCell *swipedCell  = [self.collectionView cellForItemAtIndexPath: swipedIndexPath];
 }
 
 // 1
