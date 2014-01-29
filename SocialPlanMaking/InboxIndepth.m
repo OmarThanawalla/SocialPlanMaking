@@ -54,7 +54,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,6 +78,17 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
+    else if(indexPath.row == 2)
+    {
+        
+        static NSString *CellIdentifier = @"Friends";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        cell.textLabel.text = @"Friends going";
+        
+        return cell;
+    }
     else{
 
     static NSString *CellIdentifier = @"Friends";
@@ -93,7 +104,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        return 153;
+        return 227;
     }
     else{
         return 56;

@@ -319,6 +319,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Omar Thanawalla";
 				TargetAttributes = {
+					A7633B54188FA80900D1BE77 = {
+						DevelopmentTeam = Z33YU8XT22;
+					};
 					A7633B78188FA80900D1BE77 = {
 						TestTargetID = A7633B54188FA80900D1BE77;
 					};
@@ -546,6 +549,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/omarthanawalla/Documents/FacebookSDK,
@@ -554,6 +559,7 @@
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -564,6 +570,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/omarthanawalla/Documents/FacebookSDK,
@@ -572,6 +580,7 @@
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
