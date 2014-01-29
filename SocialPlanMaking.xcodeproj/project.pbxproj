@@ -12,6 +12,8 @@
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
 		A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314F1897A1EC0023DEE7 /* DateCell.m */; };
+		A74D31941898B3980023DEE7 /* ActivityInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31931898B3980023DEE7 /* ActivityInformationCell.m */; };
+		A74D31971898B8910023DEE7 /* WhenIsGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -58,6 +60,10 @@
 		A74D314C18979BFD0023DEE7 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
 		A74D314E1897A1EC0023DEE7 /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
 		A74D314F1897A1EC0023DEE7 /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
+		A74D31921898B3980023DEE7 /* ActivityInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityInformationCell.h; sourceTree = "<group>"; };
+		A74D31931898B3980023DEE7 /* ActivityInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityInformationCell.m; sourceTree = "<group>"; };
+		A74D31951898B8910023DEE7 /* WhenIsGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhenIsGoodCell.h; sourceTree = "<group>"; };
+		A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhenIsGoodCell.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +228,10 @@
 				A7633B91188FAF2300D1BE77 /* Inbox.m */,
 				A7633B99189021FF00D1BE77 /* InboxIndepth.h */,
 				A7633B9A189021FF00D1BE77 /* InboxIndepth.m */,
+				A74D31921898B3980023DEE7 /* ActivityInformationCell.h */,
+				A74D31931898B3980023DEE7 /* ActivityInformationCell.m */,
+				A74D31951898B8910023DEE7 /* WhenIsGoodCell.h */,
+				A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */,
 				A74D308C189384600023DEE7 /* Create */,
 				A7D925141892F30A00030B6D /* Login */,
 			);
@@ -395,6 +405,7 @@
 			files = (
 				A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */,
 				A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */,
+				A74D31971898B8910023DEE7 /* WhenIsGoodCell.m in Sources */,
 				A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */,
 				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
 				A7D92517189300E000030B6D /* FindFriends.m in Sources */,
@@ -405,6 +416,7 @@
 				A7633B69188FA80900D1BE77 /* AppDelegate.m in Sources */,
 				A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */,
 				A7D9251C1893070200030B6D /* FindFriendsCell.m in Sources */,
+				A74D31941898B3980023DEE7 /* ActivityInformationCell.m in Sources */,
 				A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */,
 				A7633B65188FA80900D1BE77 /* main.m in Sources */,
 			);

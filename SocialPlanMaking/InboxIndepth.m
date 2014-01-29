@@ -7,6 +7,8 @@
 //
 
 #import "InboxIndepth.h"
+#import "ActivityInformationCell.h"
+#import "WhenIsGoodCell.h"
 
 @interface InboxIndepth ()
 
@@ -45,26 +47,57 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    
+    if(indexPath.row == 0)
+    {
+        static NSString *CellIdentifier = @"Info";
+        ActivityInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        cell.Activity1.text = @"Boating @ Lake Travis";
+        cell.vote1.text = @"23";
+        
+        return cell;
+        
+    }
+    else if (indexPath.row == 1)
+    {
+        static NSString *CellIdentifier = @"Calendar";
+        WhenIsGoodCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else{
+
+    static NSString *CellIdentifier = @"Friends";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+
     // Configure the cell...
-    
+    cell.textLabel.text = @"Friend cell";
+        
     return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 153;
+    }
+    else{
+        return 56;
+    }
 }
 
 /*

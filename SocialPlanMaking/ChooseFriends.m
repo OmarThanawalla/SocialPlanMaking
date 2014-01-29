@@ -9,6 +9,7 @@
 #import "ChooseFriends.h"
 
 @interface ChooseFriends ()
+@property (nonatomic,strong) NSArray * friends;
 
 @end
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
     NSLog(@"ChooseFriends VC loaded");
+    
+    self.friends = @[@"Clay Toboloka",@"Richie Sweeney",@"Boris Veltman",@"Surge Saeed",@"Ali Kassam",@"Ahsan Daredia",@"Ali Sajun",@"Fahim Pyarali"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -53,7 +56,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [self.friends count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +65,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = self.friends[indexPath.row];
     return cell;
 }
 
