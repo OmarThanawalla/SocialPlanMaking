@@ -33,8 +33,10 @@
     NSLog(@"Inbox: ViewDidLoad");
     self.title = @"Inbox of Activities";
     
-    //Show the Login view
-    //[self performSegueWithIdentifier:@"Login" sender:self];
+    
+    //First time download
+    [self UserDetermineCredentials];
+   
 
     
     
@@ -42,18 +44,17 @@
     
     
     //sample GET Request
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk" parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"JSON: %@",responseObject);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@",error);
-         }];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    [manager GET:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk" parameters:nil
+//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//             NSLog(@"JSON: %@",responseObject);
+//         }
+//         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//             NSLog(@"Error: %@",error);
+//         }];
     
     
     
-    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     
 //    AFHTTPRequestOperationManager * manager2 = [AFHTTPRequestOperationManager manager];
 //    NSDictionary *parameters = @{@"foo",@"bar"};
@@ -69,6 +70,25 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)UserDetermineCredentials
+{
+    BOOL LoggedIn = YES;
+    
+    //1. Grab Credentials from Apple Keychain - if empty  LoggedIn = false
+    //3. Else Logged in true
+    
+    if(LoggedIn)
+    {
+        //Show Inbox
+        //Aka Do Nothing
+        
+    }else{
+        //Show the Login view
+        [self performSegueWithIdentifier:@"Login" sender:self];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
