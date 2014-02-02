@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FindFriends : UITableViewController
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *topLeftBtn;
+
 - (IBAction)friendAllBtn:(id)sender;
 
 @end

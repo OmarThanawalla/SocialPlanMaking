@@ -51,13 +51,18 @@
     NSLog(@"The user.first_name is: %@",user.first_name);
     NSLog(@"The user.last_name is: %@",user.last_name);
     NSLog(@"The user.id is: %@", user.id);
+    //[self dismissViewControllerAnimated:YES completion:nil];
     
-    if (self.firstTime && self.goOnce) {
-        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
-        self.goOnce = NO;
-    }
+//    if (self.firstTime && self.goOnce) {
+//        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
+//        self.goOnce = NO;
+//    }
     
     
+}
+- (IBAction)LoginPushedBtn:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 // Handle possible errors that can occur during login
@@ -102,4 +107,7 @@
                           otherButtonTitles:nil] show];
     }
 }
+
+
+
 @end

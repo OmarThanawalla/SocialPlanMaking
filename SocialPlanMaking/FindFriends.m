@@ -107,8 +107,9 @@
     NSLog(@"Friend All btn pushed");
 }
 
+
 - (IBAction)DoneBtn:(id)sender {
-    NSLog(@"Done btn psuhed");
+    NSLog(@"Skip btn psuhed");
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }

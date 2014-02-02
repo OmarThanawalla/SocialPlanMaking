@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FB1EE17B55F42D7A4093556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950D61AA0A3D4056AAE4C48F /* libPods.a */; };
+		A733F96A189DB66D005BD4B6 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = A733F969189DB66D005BD4B6 /* SignUp.m */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		950D61AA0A3D4056AAE4C48F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		98699DD466734221B1AFFC26 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A733F968189DB66D005BD4B6 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
+		A733F969189DB66D005BD4B6 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 		A7D925141892F30A00030B6D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A733F968189DB66D005BD4B6 /* SignUp.h */,
+				A733F969189DB66D005BD4B6 /* SignUp.m */,
 				A7633B9C1892301000D1BE77 /* Login.h */,
 				A7633B9D1892301000D1BE77 /* Login.m */,
 				A7D92515189300E000030B6D /* FindFriends.h */,
@@ -417,6 +422,7 @@
 				A7633B9E1892301000D1BE77 /* Login.m in Sources */,
 				A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */,
 				A7633B69188FA80900D1BE77 /* AppDelegate.m in Sources */,
+				A733F96A189DB66D005BD4B6 /* SignUp.m in Sources */,
 				A7633B9B189021FF00D1BE77 /* InboxIndepth.m in Sources */,
 				A7D9251C1893070200030B6D /* FindFriendsCell.m in Sources */,
 				A74D31941898B3980023DEE7 /* ActivityInformationCell.m in Sources */,

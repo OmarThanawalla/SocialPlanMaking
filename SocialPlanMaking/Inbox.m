@@ -7,7 +7,6 @@
 //
 
 #import "Inbox.h"
-#import <AFNetworking/AFNetworking.h>
 
 
 @interface Inbox ()
@@ -36,10 +35,7 @@
     
     //First time download
     [self UserDetermineCredentials];
-   
 
-    
-    
     self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
     
     
@@ -53,28 +49,12 @@
 //             NSLog(@"Error: %@",error);
 //         }];
     
-    
-    
-    
-//    AFHTTPRequestOperationManager * manager2 = [AFHTTPRequestOperationManager manager];
-//    NSDictionary *parameters = @{@"foo",@"bar"};
-//    [manager2 POST:@"postToSomething" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"T");
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Sup");
-//    }];
-//    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 -(void)UserDetermineCredentials
 {
-    BOOL LoggedIn = YES;
+    BOOL LoggedIn = NO;
     
     //1. Grab Credentials from Apple Keychain - if empty  LoggedIn = false
     //3. Else Logged in true
@@ -86,7 +66,7 @@
         
     }else{
         //Show the Login view
-        [self performSegueWithIdentifier:@"Login" sender:self];
+        [self performSegueWithIdentifier:@"Registration" sender:self];
     }
     
 }
