@@ -510,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="517" y="583"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Find FriendsVC-->
         <scene sceneID="Se3-28-xw6">
             <objects>
-                <viewController id="Esd-V6-b9W" sceneMemberID="viewController">
+                <viewController id="Esd-V6-b9W" customClass="TabBarFindFriendsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dmd-DV-qyy"/>
                         <viewControllerLayoutGuide type="bottom" id="p5B-6d-MJw"/>
@@ -528,6 +528,9 @@
                                 <state key="normal" title="Find Friends from Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="FindFriendsBtnPushed:" destination="Esd-V6-b9W" eventType="touchUpInside" id="Daa-cx-jv9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Facebook to Find Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83g-1z-ImE">
                                 <rect key="frame" x="51" y="137" width="237" height="21"/>
@@ -541,29 +544,91 @@
                     </view>
                     <navigationItem key="navigationItem" id="EQZ-az-Fdx"/>
                     <connections>
-                        <segue destination="4as-Eg-fxk" kind="push" id="aIq-xO-0Z0"/>
+                        <segue destination="4as-Eg-fxk" kind="push" identifier="ShowFriendsTabBar" id="aIq-xO-0Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohC-iS-bcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1019" y="583"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Find Friends-->
         <scene sceneID="AO2-zO-BJS">
             <objects>
-                <tableViewController id="4as-Eg-fxk" sceneMemberID="viewController">
+                <tableViewController id="4as-Eg-fxk" customClass="FindFriends" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u1D-z3-CQA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0pr-9s-G2I">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Friend" id="Ht8-kX-DHw" customClass="FindFriendsCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0pr-9s-G2I" id="3h9-8E-SOP">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ht8-kX-DHw" id="lRj-JR-4O1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMW-kL-wL1">
+                                            <rect key="frame" x="12" y="0.0" width="51" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcg-kO-reA">
+                                            <rect key="frame" x="83" y="11" width="126" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5P-Lc-T3M">
+                                            <rect key="frame" x="254" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Friend">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="friendMe:" destination="Ht8-kX-DHw" eventType="touchUpInside" id="8FO-Ed-Oue"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Name" destination="Vcg-kO-reA" id="i14-9m-4TW"/>
+                                    <outlet property="image" destination="WMW-kL-wL1" id="28I-tO-3gE"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendToInvite" id="9gF-qJ-IaF" customClass="InviteFriendCell">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9gF-qJ-IaF" id="GEZ-GL-zrI">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-id-AUL">
+                                            <rect key="frame" x="12" y="0.0" width="51" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-K4-A9B">
+                                            <rect key="frame" x="82" y="11" width="126" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4G-mF-xIk">
+                                            <rect key="frame" x="254" y="2" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Invite">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="InviteFriendBtn:" destination="9gF-qJ-IaF" eventType="touchUpInside" id="8FE-Mb-2YH"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Name" destination="RGs-K4-A9B" id="gGw-Z3-lEL"/>
+                                    <outlet property="profilePic" destination="9Vf-id-AUL" id="SoK-5B-mY0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -571,7 +636,13 @@
                             <outlet property="delegate" destination="4as-Eg-fxk" id="R6g-cD-F23"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="EUn-yj-z2q"/>
+                    <navigationItem key="navigationItem" id="EUn-yj-z2q">
+                        <barButtonItem key="rightBarButtonItem" title="Friend All" id="as3-DI-9cX">
+                            <connections>
+                                <action selector="friendAllBtn:" destination="4as-Eg-fxk" id="UIC-Wp-D04"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSV-SW-G4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
