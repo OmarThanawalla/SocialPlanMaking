@@ -40,12 +40,14 @@
 /* Get list of friends */
 -(void) viewWillAppear:(BOOL)animated
 {
+    //Networking code
+    /*
+     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary * parameters = @{@"accessToken" : self.accessToken};
     
-    //Networking code
-    /*
+    
     [manager GET:@"http://" parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
