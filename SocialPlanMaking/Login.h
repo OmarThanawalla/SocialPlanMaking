@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-@interface Login : UIViewController <FBLoginViewDelegate>
+@interface Login : UIViewController 
+
+- (IBAction)LogIn:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *EmailAddress;
+@property (strong, nonatomic) IBOutlet UITextField *Password;
 
 @end

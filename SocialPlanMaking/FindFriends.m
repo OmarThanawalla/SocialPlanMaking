@@ -22,6 +22,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.accessToken = @"";
     }
     return self;
 }
@@ -30,11 +31,7 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     self.listOfFriends = @[@"Richie Sweeney",@"Clay Tobolka", @"Imran Jeddy"];
     self.listOfFriendsToInvite = @[@"Neal Bh",@"Chase Fieger", @"Raheel Poonja"];
     
@@ -44,6 +41,7 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
     NSDictionary * parameters = @{@"accessToken" : self.accessToken};
     
     //Networking code

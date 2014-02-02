@@ -53,6 +53,7 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [self performSegueWithIdentifier:@"findFriends" sender:nil];
+        //Store the email and password in Apple Keychain
     }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

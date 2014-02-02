@@ -42,6 +42,31 @@
 
 
 
+
+- (IBAction)LogIn:(id)sender {
+    NSLog(@"LogIn btn pushed");
+    
+    NSDictionary * params = @{@"EmailAddress": self.EmailAddress,
+                              @"Password": self.Password};
+    
+    /*
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+     [manager GET:@"http://" parameters:params
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         NSLog(@"JSON: %@", responseObject);
+         [self dismissViewControllerAnimated:YES completion:nil];
+        //Store the email and password in Apple Keychain
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+     }];
+    */
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
@@ -53,17 +78,14 @@
     NSLog(@"The user.id is: %@", user.id);
     //[self dismissViewControllerAnimated:YES completion:nil];
     
-//    if (self.firstTime && self.goOnce) {
-//        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
-//        self.goOnce = NO;
-//    }
+    //    if (self.firstTime && self.goOnce) {
+    //        [self performSegueWithIdentifier:@"InviteFriends" sender:self];
+    //        self.goOnce = NO;
+    //    }
     
     
 }
-- (IBAction)LoginPushedBtn:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 
-}
 
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
@@ -107,6 +129,7 @@
                           otherButtonTitles:nil] show];
     }
 }
+
 
 
 

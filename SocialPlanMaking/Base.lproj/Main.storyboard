@@ -568,35 +568,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URF-Id-tyH" customClass="FBLoginView">
-                                <rect key="frame" x="0.0" y="351" width="320" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hcA-Sf-nw1" id="qdJ-ZD-3Tn"/>
-                                </connections>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-6C-7F9">
-                                <rect key="frame" x="20" y="191" width="280" height="30"/>
+                                <rect key="frame" x="20" y="114" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-FF-qGA">
-                                <rect key="frame" x="20" y="241" width="150" height="30"/>
+                                <rect key="frame" x="20" y="164" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-tV-kBd">
+                                <rect key="frame" x="52" y="241" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LogIn:" destination="hcA-Sf-nw1" eventType="touchUpInside" id="fgW-M7-r68"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="f7t-uX-ZIQ">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="iXl-Qy-SAG">
-                            <connections>
-                                <action selector="LoginPushedBtn:" destination="hcA-Sf-nw1" id="fEi-DS-aEc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Login" id="f7t-uX-ZIQ"/>
+                    <connections>
+                        <outlet property="EmailAddress" destination="Ql5-6C-7F9" id="7BA-iC-ZAC"/>
+                        <outlet property="Password" destination="CvS-FF-qGA" id="0bB-Bq-pFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZT-ur-FMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -821,6 +822,7 @@
         <!--Find Friends - Find Friends!-->
         <scene sceneID="wtU-PD-L47">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obA-uc-imY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Ff7-bW-OI3" customClass="FindFriends" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rs9-OL-SIo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -916,13 +918,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="obA-uc-imY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119" y="560"/>
         </scene>
         <!--Navigation Controller - Friends-->
         <scene sceneID="Hlj-76-Ygd">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="upO-fa-SkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="anV-0G-IE3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" id="OYi-x5-I7m"/>
                     <toolbarItems/>
@@ -935,7 +937,6 @@
                         <segue destination="Ff7-bW-OI3" kind="relationship" relationship="rootViewController" id="1wg-vq-jX9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="upO-fa-SkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="560"/>
         </scene>
