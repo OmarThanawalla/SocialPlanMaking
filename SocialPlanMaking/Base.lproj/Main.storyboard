@@ -602,6 +602,24 @@
             </objects>
             <point key="canvasLocation" x="2336" y="-1640"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ung-8R-9Tq">
+            <objects>
+                <viewController id="r8U-1b-t7n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bOi-jn-4I6"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Xc-de-Fn7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POn-lP-p1O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUK-sf-2Sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2819" y="-1673"/>
+        </scene>
         <!--Find Friends - Find Friends!-->
         <scene sceneID="uCJ-8G-QcS">
             <objects>
@@ -688,7 +706,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Find Friends!" id="8Jw-2S-GdX">
-                        <barButtonItem key="leftBarButtonItem" id="MHz-Rh-WHw">
+                        <barButtonItem key="leftBarButtonItem" title="Skip" id="MHz-Rh-WHw">
                             <connections>
                                 <action selector="DoneBtn:" destination="yg9-g7-Gkj" id="frT-cO-6iL"/>
                             </connections>

@@ -61,15 +61,14 @@
     */
     
 
-    [self performSegueWithIdentifier:@"findFriends" sender:@"skip"];
+    [self performSegueWithIdentifier:@"findFriends" sender:nil];
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-     if ([[segue identifier] isEqualToString:@"findFriends"]) {
-          FindFriends * destVC = [segue destinationViewController];
-         [destVC.topLeftBtn setTitle:@"Skip"];
-     }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//     if ([[segue identifier] isEqualToString:@"findFriends"]) {
+//          FindFriends * destVC = [segue destinationViewController];
+//     }
+//}
 @end
