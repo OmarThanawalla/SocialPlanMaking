@@ -15,8 +15,7 @@
 {
     // Override point for customization after application launch.
     [FBLoginView class];
-    
-    
+
     return YES;
 }
 							
@@ -40,6 +39,10 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Handle the user leaving the app while the Facebook login dialog is being shown
+    // For example: when the user presses the iOS "home" button while the login dialog is active
+    [FBAppCall handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -58,6 +61,31 @@
     // You can add your app-specific url handling code here if needed
     
     return wasHandled;
+}
+
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+{
+    // If the session was opened successfully
+    if (!error && state == FBSessionStateOpen){
+        NSLog(@"Session opened");
+        // Show the user the logged-in UI
+        //[self userLoggedIn];
+        return;
+    }
+    if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
+        // If the session is closed
+        NSLog(@"Session closed");
+        // Show the user the logged-out UI
+        //[self userLoggedOut];
+    }
+    
+    // Handle errors
+    if (error){
+        NSLog(@"Error");
+        // Clear this token
+        [FBSession.activeSession closeAndClearTokenInformation];
+    }
+
 }
 
 @end

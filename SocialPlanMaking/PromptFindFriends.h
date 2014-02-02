@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PromptFindFriends : UIViewController
+@property (nonatomic,strong) NSString * accessToken;
 - (IBAction)FindFriendsFacebookBtnPushed:(id)sender;
 - (IBAction)FriendSkipBtn:(id)sender;
 

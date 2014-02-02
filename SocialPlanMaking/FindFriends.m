@@ -37,6 +37,25 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.listOfFriends = @[@"Richie Sweeney",@"Clay Tobolka", @"Imran Jeddy"];
     self.listOfFriendsToInvite = @[@"Neal Bh",@"Chase Fieger", @"Raheel Poonja"];
+    
+}
+
+/* Get list of friends */
+-(void) viewWillAppear:(BOOL)animated
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary * parameters = @{@"accessToken" : self.accessToken};
+    
+    //Networking code
+    /*
+    [manager GET:@"http://" parameters:parameters
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    */
 }
 
 - (void)didReceiveMemoryWarning
