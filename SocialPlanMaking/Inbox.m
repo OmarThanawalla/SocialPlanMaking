@@ -54,7 +54,7 @@
 
 -(void)UserDetermineCredentials
 {
-    BOOL LoggedIn = NO;
+    BOOL LoggedIn = YES;
     
     //1. Grab Credentials from Apple Keychain - if empty  LoggedIn = false
     //3. Else Logged in true

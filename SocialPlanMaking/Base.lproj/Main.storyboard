@@ -47,6 +47,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2DU-Yx-5yE">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="NaB-jn-4at"/>
                         <barButtonItem key="rightBarButtonItem" title="New" id="eWF-WL-jmQ">
                             <connections>
                                 <segue destination="FcS-7X-zbc" kind="modal" id="aOC-9e-Nys"/>
@@ -801,7 +802,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUK-sf-2Sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="-2196"/>
+            <point key="canvasLocation" x="2887" y="-2334"/>
         </scene>
         <!--Find Friends - Find Friends!-->
         <scene sceneID="uCJ-8G-QcS">
@@ -906,7 +907,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cH-hm-6be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3398" y="-2412"/>
+            <point key="canvasLocation" x="3390" y="-2334"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CFs-Ks-LWs">
