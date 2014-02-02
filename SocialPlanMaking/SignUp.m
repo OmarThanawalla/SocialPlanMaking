@@ -61,7 +61,7 @@
     */
     
 
-    [self performSegueWithIdentifier:@"findFriends" sender:nil];
+    [self performSegueWithIdentifier:@"PromptFindFriends" sender:nil];
     
 }
 

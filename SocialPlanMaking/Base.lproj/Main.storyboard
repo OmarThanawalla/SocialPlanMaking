@@ -549,7 +549,7 @@
                         <outlet property="EmailAddress" destination="aDm-WZ-fnl" id="RhE-5i-1DL"/>
                         <outlet property="Fullname" destination="AhK-91-0zj" id="iOK-hy-oCV"/>
                         <outlet property="Password" destination="2zh-R2-4nJ" id="biy-fi-tua"/>
-                        <segue destination="yg9-g7-Gkj" kind="push" identifier="findFriends" id="Gcz-Lf-A1D"/>
+                        <segue destination="r8U-1b-t7n" kind="push" identifier="PromptFindFriends" id="PkJ-Yt-5tO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k44-0h-OZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,10 +602,10 @@
             </objects>
             <point key="canvasLocation" x="2336" y="-1640"/>
         </scene>
-        <!--View Controller-->
+        <!--Prompt Find Friends - Find Friends-->
         <scene sceneID="ung-8R-9Tq">
             <objects>
-                <viewController id="r8U-1b-t7n" sceneMemberID="viewController">
+                <viewController id="r8U-1b-t7n" customClass="PromptFindFriends" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bOi-jn-4I6"/>
                         <viewControllerLayoutGuide type="bottom" id="6Xc-de-Fn7"/>
@@ -613,12 +613,40 @@
                     <view key="view" contentMode="scaleToFill" id="POn-lP-p1O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Facebook to Find Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFy-jD-rdL">
+                                <rect key="frame" x="40" y="134" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvq-mQ-ZEV">
+                                <rect key="frame" x="52" y="236" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find Friends from Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="FindFriendsFacebookBtnPushed:" destination="r8U-1b-t7n" eventType="touchUpInside" id="0eo-8c-pdW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Find Friends" id="bxv-AJ-hKc">
+                        <barButtonItem key="leftBarButtonItem" title="Skip" id="ER5-oU-blq">
+                            <connections>
+                                <action selector="FriendSkipBtn:" destination="r8U-1b-t7n" id="5Ly-EM-HqK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="yg9-g7-Gkj" kind="push" identifier="ShowFriends" id="C4z-XV-VVy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUK-sf-2Sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="-1673"/>
+            <point key="canvasLocation" x="2869" y="-2334"/>
         </scene>
         <!--Find Friends - Find Friends!-->
         <scene sceneID="uCJ-8G-QcS">
@@ -723,7 +751,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cH-hm-6be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="-2334"/>
+            <point key="canvasLocation" x="3412" y="-2334"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CFs-Ks-LWs">
