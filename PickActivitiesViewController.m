@@ -58,9 +58,6 @@
     
     [self fillInRowWithSuggestion: suggestionsArray];
     
-    
-    //self.Act1.text = [suggestionsArray objectAtIndex:0];
-    //self.Loc1.text = [suggestionsArray objectAtIndex:1];
 }
 
 -(void)fillInRowWithSuggestion: (NSArray *)suggestion
