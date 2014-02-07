@@ -44,4 +44,23 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+    /* Delegate method from Activities Suggestion */
+-(void)childViewController:(Activities *)tableViewController didSendString:(NSString *)value
+{
+    NSLog(@"This is the string I see: %@",value);
+    NSArray *suggestionsArray = [value componentsSeparatedByString:@"@"];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ShowSuggestions"])
+    {
+        self.myActivityController = segue.destinationViewController;
+        self.myActivityController.delegate = self;
+    }
+}
+
 @end

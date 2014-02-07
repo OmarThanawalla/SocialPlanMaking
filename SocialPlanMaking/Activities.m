@@ -65,7 +65,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellForRow caled");
     static NSString *CellIdentifier = @"Ferrari";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -75,12 +74,12 @@
     return cell;
 }
 
-
-
-
-- (IBAction)dismiss:(id)sender {
-    NSLog(@"You pushed the dismiss button");
-    [self dismissViewControllerAnimated:YES completion:nil];
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString * value = [self.temp2 objectAtIndex:indexPath.row];
+    [self.delegate childViewController:self didSendString:value];
 }
+
+
+
 @end

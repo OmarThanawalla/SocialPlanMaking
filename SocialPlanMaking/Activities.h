@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol ActivitiesDelegate;
+
 @interface Activities : UITableViewController
+@property (nonatomic, weak) id<ActivitiesDelegate> delegate;
+
+@end
 
 
-- (IBAction)dismiss:(id)sender;
-
-
+// 3. Definition of the delegate's interface
+@protocol ActivitiesDelegate <NSObject>
+- (void)childViewController:(Activities*)tableViewController
+             didSendString:(NSString *)value;
 @end

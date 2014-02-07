@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activities.h"
 
-@interface PickActivitiesViewController : UIViewController
+@interface PickActivitiesViewController : UIViewController <ActivitiesDelegate>
+@property (strong, nonatomic) Activities *myActivityController;
+@property (strong, nonatomic) IBOutlet UITextField *Act1;
+@property (strong, nonatomic) IBOutlet UITextField *Act2;
+@property (strong, nonatomic) IBOutlet UITextField *Act3;
+
+@property (strong, nonatomic) IBOutlet UITextField *Loc1;
+@property (strong, nonatomic) IBOutlet UITextField *Loc2;
+@property (strong, nonatomic) IBOutlet UITextField *Loc3;
+
 - (IBAction)Cancel:(id)sender;
+
+
 
 @end
