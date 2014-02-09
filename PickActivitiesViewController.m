@@ -11,9 +11,7 @@
 
 @interface PickActivitiesViewController ()
 @property (nonatomic, strong) Activities * myActivities;
-@property (nonatomic, assign) BOOL row1;
-@property (nonatomic, assign) BOOL row2;
-@property (nonatomic, assign) BOOL row3;
+
 
 @end
 
@@ -33,9 +31,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"PickActivitiesVC loaded");
-    self.row1 = YES;
-    self.row2 = YES;
-    self.row3 = YES;
+    
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    NSLog(@"textFieldShouldClear");
+    
+    switch (textField.tag) {
+        case 0:
+            self.Loc1.text = @"";
+            break;
+        case 1:
+            self.Loc2.text = @"";
+            break;
+        case 2:
+            self.Loc3.text = @"";
+            break;
+        default:
+            break;
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,33 +65,46 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
     /* Delegate method from Activities Suggestion */
 -(void)childViewController:(Activities *)tableViewController didSendString:(NSString *)value
 {
     NSLog(@"This is the string I see: %@",value);
     NSArray *suggestionsArray = [value componentsSeparatedByString:@"@"];
     
-    [self fillInRowWithSuggestion: suggestionsArray];
+    [self StripSuggestionWhitespace:suggestionsArray];
+}
+
+-(void)StripSuggestionWhitespace:(NSArray *) suggestionsArray
+{
+    //Strip beginning and ending white space
+    NSString * act = suggestionsArray[0];
+    NSString * loc = suggestionsArray[1];
     
+    NSString * trimmedAct = [act stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString * trimmedLoc = [loc stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSArray * suggestionsArrayNoWhiteSpace = @[trimmedAct, trimmedLoc];
+    
+    [self fillInRowWithSuggestion: suggestionsArrayNoWhiteSpace];
 }
 
 -(void)fillInRowWithSuggestion: (NSArray *)suggestion
 {
-    if (self.row1) {
+    //if act1 has text dont do antyhing
+    
+    if ([self.Act1.text isEqualToString:@""]) {
         self.Act1.text = [suggestion objectAtIndex:0];
         self.Loc1.text = [suggestion objectAtIndex:1];
-        self.row1 = NO;
-    }else if (self.row2)
+        [self.Act1 becomeFirstResponder];
+    }else if ([self.Act2.text isEqualToString:@""])
     {
         self.Act2.text = [suggestion objectAtIndex:0];
         self.Loc2.text = [suggestion objectAtIndex:1];
-        self.row2 = NO;
-    }else if(self.row3)
+        [self.Act2 becomeFirstResponder];
+    }else if([self.Act3.text isEqualToString:@""])
     {
         self.Act3.text = [suggestion objectAtIndex:0];
         self.Loc3.text = [suggestion objectAtIndex:1];
-        self.row3 = NO;
+        [self.Act3 becomeFirstResponder];
     }
     else{
         //do nothing, everyone is full
@@ -92,3 +121,17 @@
 }
 
 @end
+
+
+/*
+ //Text Manipulation Code
+ 
+ -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+ {
+ NSLog(@"text field is changing");
+ return YES;
+ }
+ 
+
+ 
+ */

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Activities.h"
 
-@interface PickActivitiesViewController : UIViewController <ActivitiesDelegate>
+@interface PickActivitiesViewController : UIViewController <ActivitiesDelegate,UITextFieldDelegate>
 @property (strong, nonatomic) Activities *myActivityController;
 @property (strong, nonatomic) IBOutlet UITextField *Act1;
 @property (strong, nonatomic) IBOutlet UITextField *Act2;
