@@ -47,6 +47,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2DU-Yx-5yE">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="dHd-lC-Za8"/>
                         <barButtonItem key="rightBarButtonItem" title="New" id="eWF-WL-jmQ">
                             <connections>
                                 <segue destination="FcS-7X-zbc" kind="modal" id="aOC-9e-Nys"/>
