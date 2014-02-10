@@ -32,6 +32,35 @@
 	// Do any additional setup after loading the view.
     NSLog(@"PickActivitiesVC loaded");
     
+    [self createAccessoryView];
+}
+
+-(void)createAccessoryView
+{
+    self.myTlbr = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    //self.myTlbr.barStyle = UIBarStyleBlack;
+    //self.myTlbr.translucent = YES;
+    
+    UIBarButtonItem * hideBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:nil];
+    //[hideBtn setTitle:@"Done"];
+//    [self.myTlbr addSubview:(UIView*) hideBtn];
+    
+//    NSMutableArray *items = [[NSMutableArray alloc] init];
+//    [items addObject: hideBtn];
+    [self.myTlbr setItems:[NSArray arrayWithObjects:hideBtn, nil]];
+    
+    
+}
+
+-(IBAction)hideKeyBoard
+{
+    NSLog(@"hideKeyBoard method");
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField
@@ -54,10 +83,13 @@
     return YES;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"textFieldDidBeginEditing");
+    [textField setInputAccessoryView:self.myTlbr];
+    
+    NSLog(@"The number of items in the toolbar is: %i",    [self.myTlbr.items count]);
+    
 }
 
 - (IBAction)Cancel:(id)sender {
