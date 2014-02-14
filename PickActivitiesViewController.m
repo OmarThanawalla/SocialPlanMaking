@@ -38,6 +38,7 @@
 -(IBAction)hideKeyBoard
 {
     NSLog(@"hideKeyBoard method");
+    [self.activeTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,12 +74,16 @@
 
 -(void)setUpAccessViewForKeyBoard:(UITextField *)textField
 {
-    //Add UIToolbar to keyboard
+    //create toolbar and hide button
     UIToolbar * myTlbr = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    UIBarButtonItem * hideBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:nil];
+    UIBarButtonItem * hideBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:@selector(hideKeyBoard)];
+    self.activeTextField = textField;
     [hideBtn setTitle:@"Close"];
+    //set up flexibleSpacing
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    //add items to toolbar
     [myTlbr setItems:[NSArray arrayWithObjects: flexibleSpace,hideBtn, nil]];
+    //Add UIToolbar to keyboard
     [textField setInputAccessoryView:myTlbr];
 }
 

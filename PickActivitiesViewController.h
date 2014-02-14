@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *Loc2;
 @property (strong, nonatomic) IBOutlet UITextField *Loc3;
 
+@property (strong, nonatomic) UITextField *activeTextField;
 
 - (IBAction)Cancel:(id)sender;
 
