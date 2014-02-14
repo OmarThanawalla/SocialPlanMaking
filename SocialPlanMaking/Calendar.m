@@ -41,27 +41,27 @@
 }
 
 #pragma mark - UICollectionView Datasource
-// 1
+// 1 -number of columns (left to right) (items is the elements in a a section like a column)
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     //NSString *searchTerm = self.searches[section];
     //return [self.searchResults[searchTerm] count];
-    return 12;
+    return 5;
 }
-// 2
+// 2 - number of rows (top to bottom) (sections is rows)
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
     //return [self.searches count];
-    return 12;
+    return 15;
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     DateCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Time" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor redColor];
+    cell.text.text = @"";
     
-    if(indexPath.section == 0)
+    if(indexPath.row == 0)
     {
-        switch (indexPath.row) {
+        switch (indexPath.section) {
 //            case 0:
 //                cell.text.text = @"12PM";
 //                break;
@@ -101,15 +101,23 @@
             case 12:
                 cell.text.text = @"12AM";
                 break;
+            case 13:
+                cell.text.text = @"1AM";
+                break;
+
+            case 14:
+                cell.text.text = @"2AM";
+                break;
+
                 
                 
             default:
                 break;
         }
     }
-    if (indexPath.row == 0) {
-        switch (indexPath.section) {
-            
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            /*
             case 1:
                 cell.text.text = @"M";
                 break;
@@ -119,32 +127,18 @@
             case 3:
                 cell.text.text = @"W";
                 break;
-            case 4:
+             */
+            case 1:
                 cell.text.text = @"Th";
                 break;
-            case 5:
+            case 2:
                 cell.text.text = @"F";
                 break;
-            case 6:
+            case 3:
                 cell.text.text = @"Sa";
                 break;
-            case 7:
+            case 4:
                 cell.text.text = @"Sun";
-                break;
-            case 8:
-                cell.text.text = @"";
-                break;
-            case 9:
-                cell.text.text = @"";
-                break;
-            case 10:
-                cell.text.text = @"";
-                break;
-            case 11:
-                cell.text.text = @"";
-                break;
-            case 12:
-                cell.text.text = @"";
                 break;
         
         
@@ -196,7 +190,8 @@
     // 2
     //CGSize retval = photo.thumbnail.size.width > 0 ? photo.thumbnail.size : CGSizeMake(100, 100);
     //retval.height += 35; retval.width += 35;
-    CGSize retval = CGSizeMake(20, 20);
+    CGSize retval = CGSizeMake(44, 44);
+    
     return retval;
 }
 

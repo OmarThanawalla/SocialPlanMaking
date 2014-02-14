@@ -238,7 +238,7 @@
             </objects>
             <point key="canvasLocation" x="2533" y="-216"/>
         </scene>
-        <!--View Controller - 2 of 3: When is good?-->
+        <!--View Controller - When is good?-->
         <scene sceneID="l3N-fx-zNn">
             <objects>
                 <viewController id="LMF-5z-Oyz" sceneMemberID="viewController">
@@ -261,7 +261,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="2 of 3: When is good?" id="eYQ-yS-43T">
+                    <navigationItem key="navigationItem" title="When is good?" id="eYQ-yS-43T">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="3GG-zz-Abe">
                             <connections>
                                 <segue destination="euC-K2-d59" kind="push" id="sET-a3-rw8"/>
@@ -280,8 +280,9 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="u6u-N3-EaS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HHm-gm-4Tm">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HHm-gm-4Tm">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -305,7 +306,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.1231090935" blue="0.1466907204" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="text" destination="yEV-Nx-JZd" id="z9o-YA-g8h"/>
                                 </connections>
@@ -321,7 +322,7 @@
             </objects>
             <point key="canvasLocation" x="3043" y="-228"/>
         </scene>
-        <!--Pick Activities View Controller - 1 of 3: Pick Activity-->
+        <!--Pick Activities View Controller - Pick Activity-->
         <scene sceneID="5gM-hs-UgF">
             <objects>
                 <viewController id="Qu0-gT-lDb" customClass="PickActivitiesViewController" sceneMemberID="viewController">
@@ -449,7 +450,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="1 of 3: Pick Activity" id="M7I-X9-lw7">
+                    <navigationItem key="navigationItem" title="Pick Activity" id="M7I-X9-lw7">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="rk6-te-2te">
                             <connections>
                                 <action selector="Cancel:" destination="Qu0-gT-lDb" id="OKL-J7-XYF"/>
@@ -474,7 +475,7 @@
             </objects>
             <point key="canvasLocation" x="2548" y="-899"/>
         </scene>
-        <!--Choose Friends - 3of 3: Choose Friends-->
+        <!--Choose Friends - Choose Friends-->
         <scene sceneID="uLE-it-rvN">
             <objects>
                 <tableViewController id="euC-K2-d59" customClass="ChooseFriends" sceneMemberID="viewController">
@@ -497,7 +498,7 @@
                             <outlet property="delegate" destination="euC-K2-d59" id="dDY-WF-y75"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="3of 3: Choose Friends" id="cco-wM-iew">
+                    <navigationItem key="navigationItem" title="Choose Friends" id="cco-wM-iew">
                         <barButtonItem key="rightBarButtonItem" title="Broadcast" id="YVK-oY-scr">
                             <connections>
                                 <action selector="Broadcast:" destination="euC-K2-d59" id="HWf-fZ-j6Q"/>
