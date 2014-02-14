@@ -31,26 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"PickActivitiesVC loaded");
-    
-    [self createAccessoryView];
 }
 
--(void)createAccessoryView
-{
-    self.myTlbr = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
-    //self.myTlbr.barStyle = UIBarStyleBlack;
-    //self.myTlbr.translucent = YES;
-    
-    UIBarButtonItem * hideBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:nil];
-    //[hideBtn setTitle:@"Done"];
-//    [self.myTlbr addSubview:(UIView*) hideBtn];
-    
-//    NSMutableArray *items = [[NSMutableArray alloc] init];
-//    [items addObject: hideBtn];
-    [self.myTlbr setItems:[NSArray arrayWithObjects:hideBtn, nil]];
-    
-    
-}
+
 
 -(IBAction)hideKeyBoard
 {
@@ -85,11 +68,18 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    NSLog(@"textFieldDidBeginEditing");
-    [textField setInputAccessoryView:self.myTlbr];
-    
-    NSLog(@"The number of items in the toolbar is: %i",    [self.myTlbr.items count]);
-    
+    [self setUpAccessViewForKeyBoard:textField];
+}
+
+-(void)setUpAccessViewForKeyBoard:(UITextField *)textField
+{
+    //Add UIToolbar to keyboard
+    UIToolbar * myTlbr = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIBarButtonItem * hideBtn = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleBordered target:self action:nil];
+    [hideBtn setTitle:@"Close"];
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [myTlbr setItems:[NSArray arrayWithObjects: flexibleSpace,hideBtn, nil]];
+    [textField setInputAccessoryView:myTlbr];
 }
 
 - (IBAction)Cancel:(id)sender {
