@@ -32,6 +32,24 @@
     UISwipeGestureRecognizer * swipeMeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(cellSwipe:)];
     swipeMeDown.direction = UISwipeGestureRecognizerDirectionDown;
     [self.collectionView addGestureRecognizer:swipeMeDown];
+    
+    [self prepareScheduleArray];
+
+}
+
+-(void)prepareScheduleArray
+{
+    int hours = 15;
+    // Days is 5
+    
+    self.schedule = [[NSMutableArray alloc] initWithCapacity:hours];
+    for (int i = 0; i < hours; i++)
+    {
+        [self.schedule insertObject:@"hello" atIndex:i];
+    }
+    
+    NSLog(@"self.schedule count: %i", [self.schedule count]);
+    NSLog(@"self.schedule count: %@", self.schedule[0] ) ;
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,18 +172,16 @@
 
 
 #pragma mark - UICollectionViewDelegate
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // TODO: Select Item
-//    NSLog(@"did touch cell");
-//    NSLog(@"index: %i",indexPath.row);
-//    NSLog(@"section: %i",indexPath.section);
-//    
-//    
-//    
-//}
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
+    NSLog(@"selected cell");
+    NSLog(@"indexPath.row %i",indexPath.row);
+    NSLog(@"indexPath.section %i",indexPath.section);
+    
+    NSMutableArray * temp = self.schedule[indexPath.section];
+    NSLog(@"The size of temp is: %i",[temp count]);
+    
+    
     
 }
 

@@ -10,4 +10,6 @@
 
 @interface Calendar : UICollectionViewController
 
+@property (nonatomic,strong) NSMutableArray * schedule;
+
 @end
