@@ -8,6 +8,8 @@
 
 #import "Calendar.h"
 #import "DateCell.h"
+#define days 5
+#define hours 15
 
 @interface Calendar ()
 
@@ -39,17 +41,24 @@
 
 -(void)prepareScheduleArray
 {
-    int hours = 15;
-    // Days is 5
+    
     
     self.schedule = [[NSMutableArray alloc] initWithCapacity:hours];
+    
+    //initialize 2D Array
     for (int i = 0; i < hours; i++)
     {
-        [self.schedule insertObject:@"hello" atIndex:i];
+        NSMutableArray * temp = [[NSMutableArray alloc] initWithCapacity:days];
+        for (int j = 0; j < days; j++) {
+            NSNumber *number = [NSNumber numberWithInt:0];
+            [temp insertObject:number atIndex:j];
+        }
+        
+        NSLog(@"temp count: %i", [temp count]);
+        [self.schedule insertObject:temp atIndex:i];
     }
     
-    NSLog(@"self.schedule count: %i", [self.schedule count]);
-    NSLog(@"self.schedule count: %@", self.schedule[0] ) ;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,15 +70,15 @@
 #pragma mark - UICollectionView Datasource
 // 1 -number of columns (left to right) (items is the elements in a a section like a column)
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    //NSString *searchTerm = self.searches[section];
-    //return [self.searchResults[searchTerm] count];
-    return 5;
+
+    return days;
 }
+
 // 2 - number of rows (top to bottom) (sections is rows)
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    //return [self.searches count];
-    return 15;
+    return hours;
 }
+
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -174,15 +183,18 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
-    NSLog(@"selected cell");
-    NSLog(@"indexPath.row %i",indexPath.row);
-    NSLog(@"indexPath.section %i",indexPath.section);
-    
-    NSMutableArray * temp = self.schedule[indexPath.section];
-    NSLog(@"The size of temp is: %i",[temp count]);
-    
-    
-    
+    NSNumber *value = self.schedule[indexPath.section][indexPath.row];
+    //flip the value
+    NSNumber * One = [NSNumber numberWithInt:0];
+    if([value isEqualToNumber:One])
+    {
+        value = [NSNumber numberWithInt:1];
+    }else
+    {
+        value = [NSNumber numberWithInt:0];
+    }
+    self.schedule[indexPath.section][indexPath.row] = value;
+     NSLog(@"The number at that cell is: %@",value);
 }
 
 -(void)cellSwipe:(UISwipeGestureRecognizer *)gesture
