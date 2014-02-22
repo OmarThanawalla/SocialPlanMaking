@@ -54,7 +54,6 @@
             [temp insertObject:number atIndex:j];
         }
         
-        NSLog(@"temp count: %i", [temp count]);
         [self.schedule insertObject:temp atIndex:i];
     }
     
@@ -182,19 +181,29 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DateCell * cell = (DateCell *) [collectionView cellForItemAtIndexPath:indexPath];
+    
     // TODO: Deselect item
     NSNumber *value = self.schedule[indexPath.section][indexPath.row];
     //flip the value
-    NSNumber * One = [NSNumber numberWithInt:0];
+    NSNumber * One = [NSNumber numberWithInt:1];
     if([value isEqualToNumber:One])
     {
-        value = [NSNumber numberWithInt:1];
+        value = [NSNumber numberWithInt:0];
+        cell.backgroundColor = [UIColor blueColor];
     }else
     {
-        value = [NSNumber numberWithInt:0];
+        value = [NSNumber numberWithInt:1];
+        cell.backgroundColor = [UIColor greenColor];
     }
     self.schedule[indexPath.section][indexPath.row] = value;
-     NSLog(@"The number at that cell is: %@",value);
+    NSLog(@"Section: %i",indexPath.section);
+    NSLog(@"Section: %i",indexPath.row);
+    NSLog(@"Value: %@",value);
+    
+    
+
 }
 
 -(void)cellSwipe:(UISwipeGestureRecognizer *)gesture
@@ -212,12 +221,7 @@
 //tells you the size of a given cell
 //the return type is CG
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
-    //self.searchResults[searchTerm][indexPath.row];
-    // 2
-    //CGSize retval = photo.thumbnail.size.width > 0 ? photo.thumbnail.size : CGSizeMake(100, 100);
-    //retval.height += 35; retval.width += 35;
+
     CGSize retval = CGSizeMake(44, 44);
     
     return retval;
