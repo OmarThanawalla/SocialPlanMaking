@@ -85,6 +85,21 @@
     
     cell.text.text = @"";
     
+    //Color the cell
+    // TODO: Deselect item
+    NSNumber *value = self.schedule[indexPath.section][indexPath.row];
+        //flip the value
+    NSNumber * One = [NSNumber numberWithInt:1];
+    if([value isEqualToNumber:One])
+    {
+        
+        cell.backgroundColor = [UIColor greenColor];
+    }else
+    {
+        cell.backgroundColor = [UIColor blueColor];
+    }
+    
+    //Set up the text
     if(indexPath.row == 0)
     {
         switch (indexPath.section) {
@@ -229,8 +244,9 @@
 
 // 3 returns the spacing between the cells, headers, and footers.
 - (UIEdgeInsets)collectionView:
-(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(2, 2, 2, 2);
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(2, 20, 2, 2);
 }
 
 
