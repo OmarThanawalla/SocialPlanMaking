@@ -7,6 +7,7 @@
 //
 
 #import "Login.h"
+#import "KeychainItemWrapper.h"
 
 @interface Login ()
 @property (nonatomic, assign) BOOL firstTime;
@@ -40,31 +41,48 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
 - (IBAction)LogIn:(id)sender {
     NSLog(@"LogIn btn pushed");
     
-    NSDictionary * params = @{@"EmailAddress": self.EmailAddress,
-                              @"Password": self.Password};
+    NSDictionary * params = @{@"EmailAddress": self.EmailAddress.text,
+                              @"Password": self.Password.text};
     
-    /*
+    
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-     [manager GET:@"http://" parameters:params
+     [manager GET:@"http://socialplanmaking.herokuapp.com/login/login2" parameters:params
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         /* SUCCESS */
          NSLog(@"JSON: %@", responseObject);
          [self dismissViewControllerAnimated:YES completion:nil];
         //Store the email and password in Apple Keychain
+        
+         
+         
+         NSDictionary * responseDict = responseObject[0];
+         
+         /*
+         
+         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"GoGoLoginData" accessGroup:nil];
+         [keychain setObject:self.EmailAddress.text forKey:(__bridge id) kSecAttrAccount];
+         [keychain setObject:self.Password.text forKey:(__bridge id)kSecValueData];
+    
+         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+         [defaults setObject:auth_token forKey:@"auth_token"];
+         [defaults setObject:user_id forKey:@"user_id"];
+         [defaults synchronize];
+          
+          */
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+         /* FAILURE */
          NSLog(@"Error: %@", error);
      }];
-    */
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // This method will be called when the user information has been fetched

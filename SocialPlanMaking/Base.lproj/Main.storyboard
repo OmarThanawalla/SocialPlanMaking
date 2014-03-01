@@ -472,7 +472,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="rBc-d8-De0">
                             <connections>
-                                <segue destination="LMF-5z-Oyz" kind="push" id="lRf-2j-9bD"/>
+                                <segue destination="LMF-5z-Oyz" kind="push" identifier="gotoCal" id="lRf-2j-9bD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

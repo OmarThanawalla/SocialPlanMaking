@@ -145,6 +145,62 @@
         self.myActivityController = segue.destinationViewController;
         self.myActivityController.delegate = self;
     }
+    if([segue.identifier isEqualToString:@"gotoCal"])
+    {
+        //create the representation of the data
+        [self transformActivityToArray];
+        
+    }
+}
+
+-(void)transformActivityToArray
+{
+    NSLog(@"transformActivityToArray");
+    NSMutableArray * activities = [NSMutableArray array];
+    
+    //Construct Activity1 Dictionary
+    NSMutableDictionary * act1 = [[NSMutableDictionary alloc] init];
+    act1[@"activity"] = self.Act1.text;
+    if (![self.Loc1.text isEqualToString:@""]) {
+        act1[@"location"] = self.Loc1.text;
+    }else
+    {
+        act1[@"location"] = NULL;
+    }
+    [activities addObject:act1];
+    
+    //Construct Activity 2 Dictionary
+    if (![self.Act2.text isEqualToString:@""])
+    {
+        NSMutableDictionary * act2 = [[NSMutableDictionary alloc] init];
+        act2[@"activity"] = self.Act2.text;
+        if (![self.Loc2.text isEqualToString:@""]) {
+            act2[@"location"] = self.Loc2.text;
+        }else
+        {
+            act2[@"location"] = NULL;
+        }
+        [activities addObject:act2];
+    }
+    
+    //Construct Activity 3 Dictionary
+    if (![self.Act3.text isEqualToString:@""])
+    {
+        NSMutableDictionary * act3 = [[NSMutableDictionary alloc] init];
+        act3[@"activity"] = self.Act3.text;
+        if (![self.Loc3.text isEqualToString:@""]) {
+            act3[@"location"] = self.Loc3.text;
+        }else
+        {
+            act3[@"location"] = NULL;
+        }
+        [activities addObject:act3];
+    }
+    
+    //Save Activities to NSUSERDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
 }
 
 @end

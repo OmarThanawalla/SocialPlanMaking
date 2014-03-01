@@ -117,10 +117,28 @@
 - (IBAction)Broadcast:(id)sender {
     NSLog(@"Broadcast button was pushed");
     
-    //send the schedule
-    //send activities/location
-    //send list of friends
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
+    //get user id
+    params[@"user_id"] = [defaults objectForKey:@"user_id"];
+    
+    //get auth tok
+    params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
+    
+    //send activities/location
+    
+    
+    //send the schedule
+    params[@"time"] =  self.schedule;
+    
+    //send list of friends
+    self.idsOfFriends;
+    
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager POST:<#(NSString *)#> parameters:<#(NSDictionary *)#> constructingBodyWithBlock:<#^(id<AFMultipartFormData> formData)block#> success:<#^(AFHTTPRequestOperation *operation, id responseObject)success#> failure:<#^(AFHTTPRequestOperation *operation, NSError *error)failure#>]
     
     
     [self dismissViewControllerAnimated:YES completion:nil];
