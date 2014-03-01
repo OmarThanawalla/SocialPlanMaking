@@ -51,8 +51,8 @@
          NSLog(@"Response: %@",responseObject);
          
          self.responseObjectJSON = responseObject;
+         [self.tableView reloadData];
          //Load up the View
-         [self wireUpInboxData: responseObject];
 
          //[self performSegueWithIdentifier:@"ShowFriends" sender:nil];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -63,10 +63,6 @@
 
 }
 
--(void)wireUpInboxData:(id)responseObject
-{
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -97,10 +93,32 @@
         ActivityInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         //wire up data
+        NSLog(@"dict %@",self.responseObjectJSON[0]);
+        
+        cell.initiator.text = self.responseObjectJSON[0][@"initiator"];
+        NSMutableDictionary * activities = self.responseObjectJSON[1];
+        NSMutableArray * arrayOfActivities = activities[@"activities"];
         
         
-        cell.Activity1.text = @"Boating @ Lake Travis";
-        cell.vote1.text = @"23";
+        if([arrayOfActivities count] > 2)
+        {
+            NSMutableDictionary * thirdAct =  arrayOfActivities[2];
+            cell.Activity3.text = thirdAct[@"activity"];
+            cell.vote3.text =  [NSString stringWithFormat:@"%@", thirdAct[@"vote"]];
+        }
+        if ([arrayOfActivities count] > 1)
+        {
+            NSMutableDictionary * secondAct =  arrayOfActivities[1];
+            cell.Activity2.text = secondAct[@"activity"];
+            cell.vote2.text =  [NSString stringWithFormat:@"%@", secondAct[@"vote"]];
+        }
+        if([arrayOfActivities count] > 0)
+        {
+            NSMutableDictionary * firstAct =  arrayOfActivities[0];
+            cell.Activity1.text = firstAct[@"activity"];
+            cell.vote1.text =  [NSString stringWithFormat:@"%@", firstAct[@"vote"]];
+        }
+        
         
         return cell;
         
