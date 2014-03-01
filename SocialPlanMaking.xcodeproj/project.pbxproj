@@ -12,6 +12,7 @@
 		A733F970189DCC2B005BD4B6 /* PromptFindFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = A733F96F189DCC2B005BD4B6 /* PromptFindFriends.m */; };
 		A734A77E18C16D9A00C2E8BE /* CalendarContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */; };
 		A734A78418C1963700C2E8BE /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */; };
+		A734A78618C196B700C2E8BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A734A78518C196B700C2E8BE /* Security.framework */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
@@ -64,6 +65,7 @@
 		A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarContainerVC.m; sourceTree = "<group>"; };
 		A734A78218C1963700C2E8BE /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		A734A78518C196B700C2E8BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A734A78618C196B700C2E8BE /* Security.framework in Frameworks */,
 				A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */,
 				A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */,
 				A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		A7633B57188FA80900D1BE77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A734A78518C196B700C2E8BE /* Security.framework */,
 				A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */,
 				A7633B58188FA80900D1BE77 /* Foundation.framework */,
 				A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */,
