@@ -101,7 +101,6 @@
     }
     else //Invited Friends List
     {
-        NSLog(@"Else sstatement");
         static NSString *CellIdentifier = @"FriendToInvite";
         InviteFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         

@@ -59,10 +59,8 @@
                                       
                                       [defaults setObject:self.accessToken forKey:@"accessToken"];
                                       
-                                      [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
                                   }];
     
-    //[self performSegueWithIdentifier:@"ShowFriends" sender:nil];
     
     //make a network call to the server with token info
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -72,14 +70,16 @@
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Succ");
+    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSLog(@"Success");
         //NSLog(@"Response: %@",responseObject);
         self.friends = responseObject[@"friended"];
         self.invites = responseObject[@"not_friended"];
         
         NSLog(@"self.friends: %i",[self.friends count]);
         NSLog(@"self.invites: %i",[self.invites count]);
+        [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Fail");
     }];

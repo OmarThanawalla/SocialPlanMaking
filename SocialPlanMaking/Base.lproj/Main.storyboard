@@ -923,7 +923,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Find Friends" id="B4N-nb-KlH"/>
                     <connections>
-                        <segue destination="oea-We-Z9V" kind="push" identifier="ShowFriends" id="eLP-0y-W6J"/>
+                        <segue destination="oea-We-Z9V" kind="push" identifier="ShowFriends" id="qNl-y9-b3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgc-X9-Vq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
