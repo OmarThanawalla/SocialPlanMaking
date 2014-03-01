@@ -81,7 +81,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    NSDictionary * dict = self.responseObjectJSON[2];
+    int friends = [dict[@"friends"] count];
+    return 3 + friends;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -114,6 +116,7 @@
         }
         if([arrayOfActivities count] > 0)
         {
+            
             NSMutableDictionary * firstAct =  arrayOfActivities[0];
             cell.Activity1.text = firstAct[@"activity"];
             cell.vote1.text =  [NSString stringWithFormat:@"%@", firstAct[@"vote"]];
@@ -142,12 +145,14 @@
         return cell;
     }
     else{
-
+        NSDictionary * dict = self.responseObjectJSON[2];
+        NSMutableArray *friendsList = dict[@"friends"];
+        
     static NSString *CellIdentifier = @"Friends";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     // Configure the cell...
-    cell.textLabel.text = @"Friend cell";
+    cell.textLabel.text = friendsList[indexPath.row-3];
         
     return cell;
     }
