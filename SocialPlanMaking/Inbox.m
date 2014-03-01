@@ -58,10 +58,19 @@
 
 -(void)UserDetermineCredentials
 {
-    BOOL LoggedIn = NO;
+    BOOL LoggedIn = YES;
     
     //1. Grab Credentials from Apple Keychain - if empty  LoggedIn = false
     //3. Else Logged in true
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString * auth = [defaults objectForKey:@"auth_token"];
+    NSString * user_id = [defaults objectForKey:@"user_id"];
+    NSLog(@"these are you creds: %@, %@",auth, user_id);
+    
+    
+    [defaults synchronize];
+
     
     if(LoggedIn)
     {

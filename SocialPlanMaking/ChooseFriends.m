@@ -129,16 +129,23 @@
     params[@"activities"] = self.activities;
     
     //send the schedule
+    
     params[@"time"] =  self.schedule;
+    NSLog(@"params[time]: %@",params[@"time"]);
     
     //send list of friends
     params[@"friends"] = self.idsOfFriends;
+    
+    //
+    NSLog(@"The count on activities: %i",[params[@"activities"] count]);
+   
+    NSLog(@"params[friends]: %@",params[@"friends"]);
     
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     
-    [manager POST:@"" parameters:params
+    [manager GET:@"http://socialplanmaking.herokuapp.com/create_event/event" parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"ResponseObject");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
