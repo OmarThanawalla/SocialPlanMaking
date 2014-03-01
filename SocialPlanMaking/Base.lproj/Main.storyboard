@@ -474,11 +474,7 @@
                                 <action selector="Cancel:" destination="Qu0-gT-lDb" id="OKL-J7-XYF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="rBc-d8-De0">
-                            <connections>
-                                <segue destination="LMF-5z-Oyz" kind="push" identifier="gotoCal" id="lRf-2j-9bD"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="rBc-d8-De0"/>
                     </navigationItem>
                     <connections>
                         <outlet property="Act1" destination="lEy-Wr-lSq" id="t8N-ie-Zfi"/>
@@ -487,11 +483,12 @@
                         <outlet property="Loc1" destination="IVs-AW-WBZ" id="BHO-Vo-fa8"/>
                         <outlet property="Loc2" destination="rWi-hh-kG0" id="S0O-HF-cIc"/>
                         <outlet property="Loc3" destination="WE8-J8-gjC" id="2Nd-aY-yUf"/>
+                        <segue destination="LMF-5z-Oyz" kind="push" id="kOH-hB-2Fi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTg-qT-aDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="-899"/>
+            <point key="canvasLocation" x="2605" y="-913"/>
         </scene>
         <!--Choose Friends - Choose Friends-->
         <scene sceneID="uLE-it-rvN">
@@ -923,6 +920,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Find Friends" id="B4N-nb-KlH"/>
                     <connections>
+                        <outlet property="findFBBtn" destination="umx-Ak-34j" id="Uwg-qm-ZC1"/>
                         <segue destination="oea-We-Z9V" kind="push" identifier="ShowFriends" id="qNl-y9-b3h"/>
                     </connections>
                 </viewController>

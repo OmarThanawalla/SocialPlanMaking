@@ -40,7 +40,7 @@
 
 - (IBAction)FindFriendsFacebookBtnPushed:(id)sender {
     NSLog(@"FindFriendsFacebookBtn pushed");
-    
+    self.findFBBtn.enabled = NO;
 
     [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
                                        allowLoginUI:YES
@@ -91,6 +91,7 @@
 {
     if ([[segue identifier] isEqualToString:@"ShowFriends"]) {
         NSLog(@"prepareForSeg Showfriends");
+        self.findFBBtn.enabled = YES;
         FindFriends * destVC = [segue destinationViewController];
         destVC.accessToken = self.accessToken;
         destVC.friends = self.friends;
