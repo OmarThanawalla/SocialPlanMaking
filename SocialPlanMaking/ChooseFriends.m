@@ -129,9 +129,8 @@
     params[@"activities"] = self.activities;
     
     //send the schedule
-    
-    params[@"time"] =  self.schedule;
-    NSLog(@"params[time]: %@",params[@"time"]);
+    NSMutableArray * oneD = [self convertTimeToOneArray:self.schedule];
+    params[@"time"] =  oneD;
     
     //send list of friends
     params[@"friends"] = self.idsOfFriends;
@@ -155,4 +154,20 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(NSMutableArray *) convertTimeToOneArray: (NSMutableArray *) array
+{
+    NSMutableArray * outbound = [NSMutableArray array];
+    for (int i = 0; i < [array count]; i++) {
+        for (int j = 0; j < [array[0] count] ; j++) {
+            NSMutableArray * temp1 = array[i];
+            NSNumber *value = temp1[j];
+            [outbound addObject:value];
+            
+        }
+    }
+    
+    return outbound;
+}
+
 @end

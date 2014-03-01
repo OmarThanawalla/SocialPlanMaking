@@ -46,7 +46,7 @@
 //             NSLog(@"Sucesss");
 //             NSLog(@"JSON: %@",responseObject);
 //             NSLog(@"this is what: %@",responseObject[0][@"hi"]);
-//             
+//
 //         }
 //         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //             NSLog(@"Fail");
@@ -122,6 +122,28 @@
 
 }
 
-
-
+- (IBAction)refresh:(id)sender {
+    NSLog(@"refresh btn");
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
+    //get user id
+    params[@"user_id"] = [defaults objectForKey:@"user_id"];
+    //get auth tok
+    params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
+    
+    [manager GET:@"http://socialplanmaking.herokuapp.com/" parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"ResponseObject");
+             NSDictionary * JSON = responseObject[0];
+             self.temp = JSON[@"activities"];
+             [self.tableView reloadData];
+             NSLog(@"Table reloaded");
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error");
+         }];
+}
 @end

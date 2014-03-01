@@ -47,7 +47,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2DU-Yx-5yE">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="dHd-lC-Za8"/>
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="dHd-lC-Za8">
+                            <connections>
+                                <action selector="refresh:" destination="E2D-3h-c5o" id="DbJ-5O-e9N"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="eWF-WL-jmQ">
                             <connections>
                                 <segue destination="FcS-7X-zbc" kind="modal" id="aOC-9e-Nys"/>

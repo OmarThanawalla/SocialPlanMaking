@@ -10,4 +10,6 @@
 
 @interface Inbox : UITableViewController
 
+- (IBAction)refresh:(id)sender;
+
 @end
