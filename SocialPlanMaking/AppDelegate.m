@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,8 @@
     // Override point for customization after application launch.
     [FBLoginView class];
 
+    //TestFlight
+    [TestFlight takeOff:@"88b8df79-9a75-4fe4-9ae3-9e9cb2fd719e"];
     return YES;
 }
 							

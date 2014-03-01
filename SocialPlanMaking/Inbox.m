@@ -134,9 +134,9 @@
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
-    [manager GET:@"http://socialplanmaking.herokuapp.com/" parameters:params
+    [manager GET:@"http://socialplanmaking.herokuapp.com/inbox_activities/retrieve" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"ResponseObject");
+             NSLog(@"ResponseObject: %@",responseObject);
              NSDictionary * JSON = responseObject[0];
              self.temp = JSON[@"activities"];
              [self.tableView reloadData];
@@ -144,6 +144,7 @@
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error");
+             NSLog(@"%@", [error localizedDescription]);
          }];
 }
 @end

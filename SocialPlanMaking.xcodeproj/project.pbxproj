@@ -13,6 +13,10 @@
 		A734A77E18C16D9A00C2E8BE /* CalendarContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */; };
 		A734A78418C1963700C2E8BE /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */; };
 		A734A78618C196B700C2E8BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A734A78518C196B700C2E8BE /* Security.framework */; };
+		A734A78E18C223C300C2E8BE /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A734A78818C223C300C2E8BE /* libTestFlight.a */; };
+		A734A78F18C223C300C2E8BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A734A78918C223C300C2E8BE /* README.md */; };
+		A734A79018C223C300C2E8BE /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = A734A78A18C223C300C2E8BE /* release_notes.md */; };
+		A734A79218C224CE00C2E8BE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A734A79118C224CE00C2E8BE /* libz.dylib */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
@@ -66,6 +70,13 @@
 		A734A78218C1963700C2E8BE /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		A734A78518C196B700C2E8BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A734A78818C223C300C2E8BE /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		A734A78918C223C300C2E8BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A734A78A18C223C300C2E8BE /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		A734A78B18C223C300C2E8BE /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		A734A78C18C223C300C2E8BE /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		A734A78D18C223C300C2E8BE /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		A734A79118C224CE00C2E8BE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
@@ -120,7 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A734A79218C224CE00C2E8BE /* libz.dylib in Frameworks */,
 				A734A78618C196B700C2E8BE /* Security.framework in Frameworks */,
+				A734A78E18C223C300C2E8BE /* libTestFlight.a in Frameworks */,
 				A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */,
 				A7D925101892EE2F00030B6D /* FacebookSDK.framework in Frameworks */,
 				A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */,
@@ -142,6 +155,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A734A78718C223C300C2E8BE /* TestFlightSDK3.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A734A78818C223C300C2E8BE /* libTestFlight.a */,
+				A734A78918C223C300C2E8BE /* README.md */,
+				A734A78A18C223C300C2E8BE /* release_notes.md */,
+				A734A78B18C223C300C2E8BE /* TestFlight+AsyncLogging.h */,
+				A734A78C18C223C300C2E8BE /* TestFlight+ManualSessions.h */,
+				A734A78D18C223C300C2E8BE /* TestFlight.h */,
+			);
+			path = TestFlightSDK3.0.0;
+			sourceTree = "<group>";
+		};
 		A74D308C189384600023DEE7 /* Create */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +208,7 @@
 		A7633B57188FA80900D1BE77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A734A79118C224CE00C2E8BE /* libz.dylib */,
 				A734A78518C196B700C2E8BE /* Security.framework */,
 				A7D9250F1892EE2F00030B6D /* FacebookSDK.framework */,
 				A7633B58188FA80900D1BE77 /* Foundation.framework */,
@@ -246,6 +273,7 @@
 			children = (
 				A7633B90188FAF2300D1BE77 /* Inbox.h */,
 				A7633B91188FAF2300D1BE77 /* Inbox.m */,
+				A734A78718C223C300C2E8BE /* TestFlightSDK3.0.0 */,
 				A7633B99189021FF00D1BE77 /* InboxIndepth.h */,
 				A7633B9A189021FF00D1BE77 /* InboxIndepth.m */,
 				A74D31921898B3980023DEE7 /* ActivityInformationCell.h */,
@@ -375,8 +403,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A734A79018C223C300C2E8BE /* release_notes.md in Resources */,
 				A7633B74188FA80900D1BE77 /* Images.xcassets in Resources */,
 				A7633B63188FA80900D1BE77 /* InfoPlist.strings in Resources */,
+				A734A78F18C223C300C2E8BE /* README.md in Resources */,
 				A7D9251E1893071C00030B6D /* FindFriendsCell.xib in Resources */,
 				A7633B6C188FA80900D1BE77 /* Main.storyboard in Resources */,
 			);
@@ -586,8 +616,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/omarthanawalla/Desktop/scratchPadiPhoneApps/SocialPlanMaking/SocialPlanMaking/TestFlightSDK3.0.0,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8BB5E23D-3CF8-41A6-8AE9-849ED7794CC0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -607,8 +641,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialPlanMaking/SocialPlanMaking-Prefix.pch";
 				INFOPLIST_FILE = "SocialPlanMaking/SocialPlanMaking-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/omarthanawalla/Desktop/scratchPadiPhoneApps/SocialPlanMaking/SocialPlanMaking/TestFlightSDK3.0.0,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8BB5E23D-3CF8-41A6-8AE9-849ED7794CC0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
