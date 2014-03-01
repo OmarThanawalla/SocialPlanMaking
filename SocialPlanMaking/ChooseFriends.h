@@ -12,5 +12,6 @@
 - (IBAction)Broadcast:(id)sender;
 
 @property NSMutableArray * schedule;
+@property NSMutableArray * idsOfFriends;
 
 @end

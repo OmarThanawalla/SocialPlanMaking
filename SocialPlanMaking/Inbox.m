@@ -41,11 +41,15 @@
     
     //sample GET Request
 //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:@"http://api.openweathermap.org/data/2.5/weather?q=London,uk" parameters:nil
+//    [manager GET:@"http://socialplanmaking.herokuapp.com/" parameters:nil
 //         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//             NSLog(@"Sucesss");
 //             NSLog(@"JSON: %@",responseObject);
+//             NSLog(@"this is what: %@",responseObject[0][@"hi"]);
+//             
 //         }
 //         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//             NSLog(@"Fail");
 //             NSLog(@"Error: %@",error);
 //         }];
     
