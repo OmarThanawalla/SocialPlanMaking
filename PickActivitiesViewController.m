@@ -88,6 +88,17 @@
     [textField setInputAccessoryView:myTlbr];
 }
 
+- (IBAction)next:(id)sender {
+    if ([self.Act1.text isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Alert" message: @"Please select an activity" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"gotoCal" sender:nil];
+    }
+}
+
 - (IBAction)Cancel:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];

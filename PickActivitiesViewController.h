@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) UITextField *activeTextField;
 @property (strong, nonatomic) NSMutableArray * activities;
+- (IBAction)next:(id)sender;
 
 - (IBAction)Cancel:(id)sender;
 

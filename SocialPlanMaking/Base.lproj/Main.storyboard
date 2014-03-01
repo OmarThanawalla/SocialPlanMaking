@@ -474,7 +474,11 @@
                                 <action selector="Cancel:" destination="Qu0-gT-lDb" id="OKL-J7-XYF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="rBc-d8-De0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="rBc-d8-De0">
+                            <connections>
+                                <action selector="next:" destination="Qu0-gT-lDb" id="rLF-r7-D0q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="Act1" destination="lEy-Wr-lSq" id="t8N-ie-Zfi"/>
@@ -483,12 +487,12 @@
                         <outlet property="Loc1" destination="IVs-AW-WBZ" id="BHO-Vo-fa8"/>
                         <outlet property="Loc2" destination="rWi-hh-kG0" id="S0O-HF-cIc"/>
                         <outlet property="Loc3" destination="WE8-J8-gjC" id="2Nd-aY-yUf"/>
-                        <segue destination="LMF-5z-Oyz" kind="push" id="kOH-hB-2Fi"/>
+                        <segue destination="LMF-5z-Oyz" kind="push" identifier="gotoCal" id="kOH-hB-2Fi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTg-qT-aDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2605" y="-913"/>
+            <point key="canvasLocation" x="2539" y="-899"/>
         </scene>
         <!--Choose Friends - Choose Friends-->
         <scene sceneID="uLE-it-rvN">
