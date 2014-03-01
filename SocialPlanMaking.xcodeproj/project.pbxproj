@@ -11,6 +11,7 @@
 		A733F96A189DB66D005BD4B6 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = A733F969189DB66D005BD4B6 /* SignUp.m */; };
 		A733F970189DCC2B005BD4B6 /* PromptFindFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = A733F96F189DCC2B005BD4B6 /* PromptFindFriends.m */; };
 		A734A77E18C16D9A00C2E8BE /* CalendarContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */; };
+		A734A78418C1963700C2E8BE /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */; };
 		A74D308818936F5B0023DEE7 /* InviteFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308718936F5B0023DEE7 /* InviteFriendCell.m */; };
 		A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D308A189384430023DEE7 /* PickActivitiesViewController.m */; };
 		A74D314D18979BFD0023DEE7 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314C18979BFD0023DEE7 /* Calendar.m */; };
@@ -61,6 +62,8 @@
 		A733F96F189DCC2B005BD4B6 /* PromptFindFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptFindFriends.m; sourceTree = "<group>"; };
 		A734A77C18C16D9A00C2E8BE /* CalendarContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarContainerVC.h; sourceTree = "<group>"; };
 		A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarContainerVC.m; sourceTree = "<group>"; };
+		A734A78218C1963700C2E8BE /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		A74D308618936F5B0023DEE7 /* InviteFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendCell.h; sourceTree = "<group>"; };
 		A74D308718936F5B0023DEE7 /* InviteFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendCell.m; sourceTree = "<group>"; };
 		A74D3089189384430023DEE7 /* PickActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PickActivitiesViewController.h; path = ../PickActivitiesViewController.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 			children = (
 				A7633B67188FA80900D1BE77 /* AppDelegate.h */,
 				A7633B68188FA80900D1BE77 /* AppDelegate.m */,
+				A734A78218C1963700C2E8BE /* KeychainItemWrapper.h */,
+				A734A78318C1963700C2E8BE /* KeychainItemWrapper.m */,
 				A7633B6A188FA80900D1BE77 /* Main.storyboard */,
 				A734A77C18C16D9A00C2E8BE /* CalendarContainerVC.h */,
 				A734A77D18C16D9A00C2E8BE /* CalendarContainerVC.m */,
@@ -429,6 +434,7 @@
 				A7633B95188FB6E200D1BE77 /* Activities.m in Sources */,
 				A7D92517189300E000030B6D /* FindFriends.m in Sources */,
 				A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */,
+				A734A78418C1963700C2E8BE /* KeychainItemWrapper.m in Sources */,
 				A7633B72188FA80900D1BE77 /* SecondViewController.m in Sources */,
 				A7633B9E1892301000D1BE77 /* Login.m in Sources */,
 				A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */,

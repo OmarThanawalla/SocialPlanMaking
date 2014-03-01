@@ -112,12 +112,16 @@
     NSLog(@"didUNNNNSelect");
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     //cell.accessoryType = UITableViewCellAccessoryNone;
-
-    
 }
 
 - (IBAction)Broadcast:(id)sender {
     NSLog(@"Broadcast button was pushed");
+    
+    //send the schedule
+    //send activities/location
+    //send list of friends
+    
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

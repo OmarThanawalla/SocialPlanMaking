@@ -5,7 +5,7 @@
 //  Created by Omar Thanawalla on 2/1/14.
 //  Copyright (c) 2014 Omar Thanawalla. All rights reserved.
 //
-
+#import "KeychainItemWrapper.h"
 #import "SignUp.h"
 #import "FindFriends.h"
 
@@ -41,7 +41,7 @@
     
     
     //Networking Code
-    /*
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parameters = @{@"Fullname": self.Fullname.text,
@@ -49,17 +49,24 @@
                                  @"Password" : self.Password.text
                                  };
     
-    [manager POST:@"http://example.com/resources.json" parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://socialplanmaking.herokuapp.com/create_user/registration" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
         NSLog(@"JSON: %@", responseObject);
+        
+        
         [self performSegueWithIdentifier:@"findFriends" sender:nil];
-        //Store the email and password in Apple Keychain
+        //store the email and password in the KeyChain or NSUserDefaults. NOTE: I imported the KeychainItemWrapper and linked Secuirty.framework
+        KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"GoGoLoginData" accessGroup:nil];
+        
+        
+        
     }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
               
     }];
-    */
+    
     
 
     [self performSegueWithIdentifier:@"PromptFindFriends" sender:nil];
