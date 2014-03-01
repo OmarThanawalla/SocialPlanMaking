@@ -32,11 +32,11 @@
     NSLog(@"Inbox: ViewDidLoad");
     self.title = @"Inbox of Activities";
     
-    
+    [self refresh:nil];
     //First time download
     [self UserDetermineCredentials];
 
-    self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
+    //self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
     
     
     //sample GET Request

@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     NSLog(@"ChooseFriends VC loaded");
+    
+    self.idsOfFriends = [NSMutableArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
@@ -44,9 +46,10 @@
     
     [manager GET:@"http://socialplanmaking.herokuapp.com/get_friends/friends" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"ResponseObject");
+             NSLog(@"ResponseObject %@",responseObject);
              NSLog(@"The size of responseObject is: %i",[responseObject count]);
-             self.friends = responseObject[0];
+             self.friends = responseObject;
+             [self.tableView reloadData];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error");
              NSLog(@"Localized error: %@",[error localizedDescription]);
@@ -82,8 +85,7 @@
     // Configure the cell...
     NSDictionary * friendObj =  self.friends[indexPath.row];
     NSLog(@"The name is: %@",friendObj[@"friend_name"]);
-    //cell.textLabel.text = friendObj[@"friend_name"];
-    cell.textLabel.text = @"ot";
+    cell.textLabel.text = friendObj[@"friend_name"];
     return cell;
 }
 
@@ -100,9 +102,12 @@
         
         //grab the userID at the indexPath
         int id = 3;
+        NSDictionary * friendObj = self.friends[indexPath.row];
+        NSNumber * myNumber = friendObj[@"friend_id"];
+        
         
         //append the userID to idOfFriends
-        [self.idsOfFriends  addObject:[NSNumber numberWithInt:id]];
+        [self.idsOfFriends  addObject:myNumber];
 
     }else
     {
