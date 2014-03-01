@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *Loc3;
 
 @property (strong, nonatomic) UITextField *activeTextField;
+@property (strong, nonatomic) NSMutableArray * activities;
 
 - (IBAction)Cancel:(id)sender;
 

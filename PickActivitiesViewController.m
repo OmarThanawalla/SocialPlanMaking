@@ -8,6 +8,7 @@
 
 #import "PickActivitiesViewController.h"
 #import "Activities.h"
+#import "CalendarContainerVC.h"
 
 @interface PickActivitiesViewController ()
 @property (nonatomic, strong) Activities * myActivities;
@@ -149,6 +150,9 @@
     {
         //create the representation of the data
         [self transformActivityToArray];
+        CalendarContainerVC * destVC = segue.destinationViewController;
+        assert(self.activities != nil);
+        destVC.activities = self.activities;
         
     }
 }
@@ -196,11 +200,7 @@
         }
         [activities addObject:act3];
     }
-    
-    //Save Activities to NSUSERDefaults
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
+    self.activities = activities;
 }
 
 @end

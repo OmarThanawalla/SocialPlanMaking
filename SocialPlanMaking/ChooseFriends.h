@@ -13,5 +13,6 @@
 
 @property NSMutableArray * schedule;
 @property NSMutableArray * idsOfFriends;
+@property NSMutableArray * activities;
 
 @end

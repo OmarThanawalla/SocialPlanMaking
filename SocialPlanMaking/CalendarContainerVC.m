@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    assert(self.activities != nil);
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +48,9 @@
     {
         ChooseFriends * myChFri =  segue.destinationViewController;
         myChFri.schedule = self.myCalObj.schedule;
+        myChFri.activities = self.activities;
     }
+    
 }
 
 @end

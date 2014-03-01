@@ -11,5 +11,6 @@
 @interface CalendarContainerVC : UIViewController
 
 @property Calendar * myCalObj;
+@property NSMutableArray * activities;
 
 @end

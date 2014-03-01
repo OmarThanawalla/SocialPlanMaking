@@ -110,8 +110,6 @@
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"didUNNNNSelect");
-    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    //cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
 - (IBAction)Broadcast:(id)sender {
@@ -127,18 +125,25 @@
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
     //send activities/location
-    
+    assert(self.activities != nil);
+    params[@"activities"] = self.activities;
     
     //send the schedule
     params[@"time"] =  self.schedule;
     
     //send list of friends
-    self.idsOfFriends;
+    params[@"friends"] = self.idsOfFriends;
     
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    [manager POST:<#(NSString *)#> parameters:<#(NSDictionary *)#> constructingBodyWithBlock:<#^(id<AFMultipartFormData> formData)block#> success:<#^(AFHTTPRequestOperation *operation, id responseObject)success#> failure:<#^(AFHTTPRequestOperation *operation, NSError *error)failure#>]
+    
+    [manager POST:@"" parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"ResponseObject");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error");
+    }];
     
     
     [self dismissViewControllerAnimated:YES completion:nil];
