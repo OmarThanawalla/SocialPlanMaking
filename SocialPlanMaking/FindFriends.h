@@ -11,6 +11,10 @@
 @interface FindFriends : UITableViewController
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *topLeftBtn;
 @property (strong, nonatomic) NSString *accessToken;
+@property (strong, nonatomic) NSMutableArray * friends;
+@property (strong, nonatomic) NSMutableArray * invites;
+
+
 - (IBAction)friendAllBtn:(id)sender;
 
 @end

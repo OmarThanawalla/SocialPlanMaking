@@ -74,7 +74,12 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Succ");
-        NSLog(@"Response: %@",responseObject);
+        //NSLog(@"Response: %@",responseObject);
+        self.friends = responseObject[@"friended"];
+        self.invites = responseObject[@"not_friended"];
+        
+        NSLog(@"self.friends: %i",[self.friends count]);
+        NSLog(@"self.invites: %i",[self.invites count]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Fail");
     }];
@@ -85,8 +90,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"ShowFriends"]) {
+        NSLog(@"prepareForSeg Showfriends");
         FindFriends * destVC = [segue destinationViewController];
         destVC.accessToken = self.accessToken;
+        destVC.friends = self.friends;
+        destVC.invites = self.invites;
     }
 }
 

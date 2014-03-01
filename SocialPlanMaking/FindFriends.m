@@ -11,8 +11,6 @@
 #import "InviteFriendCell.h"
 
 @interface FindFriends ()
-@property (nonatomic,strong) NSArray * listOfFriends;
-@property (nonatomic,strong) NSArray * listOfFriendsToInvite;
 @end
 
 @implementation FindFriends
@@ -30,10 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-    self.listOfFriends = @[@"Richie Sweeney",@"Clay Tobolka", @"Imran Jeddy"];
-    self.listOfFriendsToInvite = @[@"Neal Bh",@"Chase Fieger", @"Raheel Poonja"];
+    NSLog(@"Findfirneds");
+    NSLog(@"%i",[self.friends count]);
+    NSLog(@"%i",[self.invites count]);
     
 }
 
@@ -73,12 +70,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    NSLog(@"numberOfRows: %i", ([self.friends count] + [self.invites count] + 1 ));
     
-    NSLog(@"complete list is: %i", [self.listOfFriends count] +[self.listOfFriendsToInvite count] + 1);
-    
-    return ([self.listOfFriends count] +[self.listOfFriendsToInvite count] + 1);
-    
-    
+    return ([self.friends count] + [self.invites count] + 1 );
     
 }
 
@@ -86,16 +80,17 @@
 {
     
     
-    if(indexPath.row < [self.listOfFriends count])
+    if(indexPath.row < [self.friends count])
     {
         static NSString *CellIdentifier = @"Friend";
         FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         // Configure the cell...
-        cell.Name.text = self.listOfFriends[indexPath.row];
+        NSDictionary * dict = self.friends[indexPath.row];
+        cell.Name.text =dict[@"name"];
         return cell;
     }
-    else if (indexPath.row == [self.listOfFriends count]) {
+    else if (indexPath.row == [self.friends count]) {
         static NSString *CellIdentifier = @"Friend";
         FindFriendsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
@@ -106,12 +101,14 @@
     }
     else //Invited Friends List
     {
+        NSLog(@"Else sstatement");
         static NSString *CellIdentifier = @"FriendToInvite";
         InviteFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         
         // Configure the cell...
-        cell.Name.text = self.listOfFriends[(indexPath.row - [self.listOfFriends count] -1 )];
+        NSDictionary * otherDict = self.invites[(indexPath.row - [self.friends count] -1 )];
+        cell.Name.text = otherDict[@"name"];
         return cell;
     }
     

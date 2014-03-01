@@ -13,4 +13,7 @@
 - (IBAction)FindFriendsFacebookBtnPushed:(id)sender;
 - (IBAction)FriendSkipBtn:(id)sender;
 
+
+@property (strong, nonatomic) NSMutableArray * friends;
+@property (strong, nonatomic) NSMutableArray * invites;
 @end

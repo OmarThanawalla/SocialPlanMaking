@@ -138,7 +138,8 @@
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"ResponseObject: %@",responseObject);
              NSDictionary * JSON = responseObject[0];
-             self.temp = JSON[@"activities"];
+             NSLog(@"sdf: %@",JSON[@"activities"]);
+             self.temp = JSON[@"activity"];
              [self.tableView reloadData];
              NSLog(@"Table reloaded");
              
