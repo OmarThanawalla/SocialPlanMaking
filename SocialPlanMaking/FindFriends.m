@@ -37,9 +37,9 @@
 /* Get list of friends */
 -(void) viewWillAppear:(BOOL)animated
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    NSDictionary * parameters = @{@"accessToken" : self.accessToken};
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSDictionary * parameters = @{@"accessToken" : self.accessToken};
     
     //Networking code
     /*
@@ -122,6 +122,7 @@
     //FindFriendsCell * myCell = [tableView cellForRowAtIndexPath:indexPath];
     if(indexPath.row < [self.friends count])
     {
+        
         NSDictionary * dict = self.friends[indexPath.row];
         NSLog(@"This is dict: %@",dict);
         NSLog(@"assigning: %@",dict[@"id"]);
@@ -129,6 +130,9 @@
         NSLog(@"This is myNumber: %@", self.friendID);
         
         [self callServerToMakeFriends];
+        FindFriendsCell * myCell = (FindFriendsCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
+        myCell.backgroundColor = [UIColor greenColor];
     }
 }
 

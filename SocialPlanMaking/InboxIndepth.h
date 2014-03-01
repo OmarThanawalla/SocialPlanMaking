@@ -11,4 +11,7 @@
 @interface InboxIndepth : UITableViewController
 
 
+
+@property (strong, nonatomic) NSMutableArray * friendsGoing;
+
 @end

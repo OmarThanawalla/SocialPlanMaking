@@ -101,7 +101,6 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         //grab the userID at the indexPath
-        int id = 3;
         NSDictionary * friendObj = self.friends[indexPath.row];
         NSNumber * myNumber = friendObj[@"friend_id"];
         

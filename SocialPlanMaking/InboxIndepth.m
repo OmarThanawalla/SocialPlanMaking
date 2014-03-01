@@ -48,20 +48,26 @@
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
-//     {
-//         NSLog(@"Success");
-//         //NSLog(@"Response: %@",responseObject);
-//         self.friends = responseObject[@"friended"];
-//         self.invites = responseObject[@"not_friended"];
-//         
-//         NSLog(@"self.friends: %i",[self.friends count]);
-//         NSLog(@"self.invites: %i",[self.invites count]);
-//         [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
-//     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//         NSLog(@"Fail");
-//     }];
+    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         NSLog(@"Success");
+         NSLog(@"Response: %@",responseObject);
+         
+         //Load up the View
+         [self wireUpInboxData: responseObject];
 
+         [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Fail");
+         NSLog(@"Error: %@",[error localizedDescription]);
+         //alert box
+     }];
+
+}
+
+-(void)wireUpInboxData:(id)responseObject
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

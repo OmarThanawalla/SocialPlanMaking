@@ -166,14 +166,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="Activity1" destination="osp-Hc-gJY" id="Nmi-Tp-JeV"/>
-                                    <outlet property="Activity2" destination="2KQ-hI-6Td" id="Cbv-qj-7Si"/>
-                                    <outlet property="Activity3" destination="2Zn-Ds-cRl" id="fWk-e8-qb8"/>
-                                    <outlet property="vote1" destination="9Fk-7a-DB5" id="zOC-cI-7FM"/>
-                                    <outlet property="vote2" destination="CPI-o7-IBF" id="QoO-1c-UIL"/>
-                                    <outlet property="vote3" destination="9yH-fC-76z" id="Uuj-M1-hPL"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Calendar" id="Nh6-1X-H6d" customClass="WhenIsGoodCell">
                                 <rect key="frame" x="0.0" y="313" width="320" height="44"/>
