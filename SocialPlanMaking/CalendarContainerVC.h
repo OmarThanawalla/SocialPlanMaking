@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Calendar.h"
 @interface CalendarContainerVC : UIViewController
+
+@property Calendar * myCalObj;
 
 @end

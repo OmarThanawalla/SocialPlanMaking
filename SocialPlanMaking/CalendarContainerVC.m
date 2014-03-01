@@ -7,6 +7,7 @@
 //
 
 #import "CalendarContainerVC.h"
+#import "ChooseFriends.h"
 
 @interface CalendarContainerVC ()
 
@@ -38,6 +39,15 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"prepareForSegue: %@",    segue.identifier);
+    Calendar * destVC = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"containCalendar"]) {
+        self.myCalObj = destVC;
+    }
+    else if ([segue.identifier isEqualToString:@"pushChooseFriends"])
+    {
+        ChooseFriends * myChFri =  segue.destinationViewController;
+        myChFri.schedule = self.myCalObj.schedule;
+    }
 }
 
 @end

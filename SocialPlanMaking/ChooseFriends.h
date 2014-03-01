@@ -11,4 +11,6 @@
 @interface ChooseFriends : UITableViewController
 - (IBAction)Broadcast:(id)sender;
 
+@property NSMutableArray * schedule;
+
 @end
