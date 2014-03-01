@@ -60,7 +60,15 @@
         
          
          
-         NSDictionary * responseDict = responseObject[0];
+         // Store the data
+         NSString *auth_token = [responseObject[0] objectForKey:@"auth_token"];
+         NSString *user_id = [responseObject[0] objectForKey:@"user_id"];
+         
+         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+         [defaults setObject:auth_token forKey:@"auth_token"];
+         [defaults setObject:user_id forKey:@"user_id"];
+         [defaults synchronize];
+
          
          /*
          
