@@ -14,5 +14,6 @@
 
 
 @property (strong, nonatomic) NSMutableArray * friendsGoing;
+@property (strong, nonatomic) NSMutableArray * responseObjectJSON;
 
 @end

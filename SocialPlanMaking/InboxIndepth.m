@@ -50,6 +50,7 @@
          NSLog(@"Success");
          NSLog(@"Response: %@",responseObject);
          
+         self.responseObjectJSON = responseObject;
          //Load up the View
          [self wireUpInboxData: responseObject];
 
@@ -94,6 +95,9 @@
     {
         static NSString *CellIdentifier = @"Info";
         ActivityInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        //wire up data
+        
         
         cell.Activity1.text = @"Boating @ Lake Travis";
         cell.vote1.text = @"23";

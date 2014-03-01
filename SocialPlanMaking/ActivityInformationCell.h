@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *vote1;
 @property (strong, nonatomic) IBOutlet UILabel *vote2;
 @property (strong, nonatomic) IBOutlet UILabel *vote3;
+@property (strong, nonatomic) IBOutlet UILabel *initiator;
 
 @end
