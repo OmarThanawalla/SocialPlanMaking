@@ -10,6 +10,7 @@
 
 @interface InboxIndepth : UITableViewController
 
+- (IBAction)refresh:(id)sender;
 
 
 @property (strong, nonatomic) NSMutableArray * friendsGoing;

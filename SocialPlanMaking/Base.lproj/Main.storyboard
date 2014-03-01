@@ -199,7 +199,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9wp-sM-ZdJ">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="k0M-dr-zel"/>
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="k0M-dr-zel">
+                            <connections>
+                                <action selector="refresh:" destination="YvN-zM-0Eu" id="91F-es-o73"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLi-4l-urs" userLabel="First Responder" sceneMemberID="firstResponder"/>

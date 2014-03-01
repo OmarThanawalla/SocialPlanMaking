@@ -30,13 +30,9 @@
     [super viewDidLoad];
 
     self.title = @"Activity";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self loadInboxIndepthData];
+    //[self loadInboxIndepthData];
+    [self refresh:nil];
 }
 
 -(void) loadInboxIndepthData
@@ -48,7 +44,7 @@
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    [manager GET:@"http://socialplanmaking.herokuapp.com/read_event/event" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSLog(@"Success");
          NSLog(@"Response: %@",responseObject);
@@ -56,7 +52,7 @@
          //Load up the View
          [self wireUpInboxData: responseObject];
 
-         [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
+         //[self performSegueWithIdentifier:@"ShowFriends" sender:nil];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          NSLog(@"Fail");
          NSLog(@"Error: %@",[error localizedDescription]);
@@ -145,5 +141,7 @@
 }
 
 
-
+- (IBAction)refresh:(id)sender {
+    [self loadInboxIndepthData];
+}
 @end
