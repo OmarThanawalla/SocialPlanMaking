@@ -41,7 +41,8 @@
     
     NSDictionary *parameters = @{@"user_id": [defaults objectForKey:@"user_id"],
                                  @"auth_token": [defaults objectForKey: @"auth_token"],
-                                 @"fb_token" : [defaults objectForKey:@"accessToken"]
+                                 @"fb_token" : [defaults objectForKey:@"accessToken"],
+                                 @"event_id" : [defaults objectForKey:@"currentEventID"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://socialplanmaking.herokuapp.com/read_event/event" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)

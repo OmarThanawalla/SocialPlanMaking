@@ -11,7 +11,6 @@
 
 @interface Inbox ()
 
-@property (nonatomic, strong) NSArray * temp;
 
 @end
 
@@ -35,23 +34,8 @@
     [self refresh:nil];
     //First time download
     [self UserDetermineCredentials];
+    
 
-    //self.temp = @[@"Swim @ Barton Springs", @"Eat @ Trudy's Restaurant", @"Biking @ Zilker Park", @"Climbing @ Gregory", @"Boating @ Lake Travis"];
-    
-    
-    //sample GET Request
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:@"http://socialplanmaking.herokuapp.com/" parameters:nil
-//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//             NSLog(@"Sucesss");
-//             NSLog(@"JSON: %@",responseObject);
-//             NSLog(@"this is what: %@",responseObject[0][@"hi"]);
-//
-//         }
-//         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//             NSLog(@"Fail");
-//             NSLog(@"Error: %@",error);
-//         }];
     
 
 }
@@ -113,11 +97,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = self.temp[indexPath.row];
+    NSDictionary * myDict = self.temp[indexPath.row];
+    cell.textLabel.text = myDict[@"activity"];
+    
     return cell;
 }
 - (void)tableView:(UITableView *)sender didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath called");
+    
+    NSDictionary * myDict = self.temp[indexPath.row];
+    NSNumber * myNumber = myDict[@"event_id"];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:myNumber forKey:@"currentEventID"];
+    [defaults synchronize];
+    
     [self performSegueWithIdentifier:@"ViewActivity" sender:self];
 
 }
@@ -137,11 +131,8 @@
     [manager GET:@"http://socialplanmaking.herokuapp.com/inbox_activities/retrieve" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"ResponseObject: %@",responseObject);
-             NSDictionary * JSON = responseObject[0];
-             NSLog(@"sdf: %@",JSON[@"activities"]);
-             self.temp = JSON[@"activity"];
+             self.temp = responseObject;
              [self.tableView reloadData];
-             NSLog(@"Table reloaded");
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error");

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Inbox : UITableViewController
+@property (nonatomic, strong) NSMutableArray * temp;
 
 - (IBAction)refresh:(id)sender;
 
