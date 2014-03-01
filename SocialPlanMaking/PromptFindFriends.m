@@ -65,6 +65,8 @@
     //make a network call to the server with token info
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    //NSLog(@"user_id")
+    
     NSDictionary *parameters = @{@"user_id": [defaults objectForKey:@"user_id"],
                                  @"auth_token": [defaults objectForKey: @"auth_token"],
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]

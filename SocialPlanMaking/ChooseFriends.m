@@ -9,7 +9,6 @@
 #import "ChooseFriends.h"
 
 @interface ChooseFriends ()
-@property (nonatomic,strong) NSArray * friends;
 
 @end
 
@@ -28,23 +27,30 @@
 {
     [super viewDidLoad];
     NSLog(@"ChooseFriends VC loaded");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
-    self.friends = @[@"Clay Toboloka",@"Richie Sweeney",@"Boris Veltman",@"Surge Saeed",@"Ali Kassam",@"Ahsan Daredia",@"Ali Sajun",@"Fahim Pyarali"];
+    //get user id
+    params[@"user_id"] = [defaults objectForKey:@"user_id"];
+    
+    //get auth tok
+    params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
     
-    self.idsOfFriends = [NSMutableArray array];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-    /* Test arrayPassing */
-//    NSNumber * firstElement = self.schedule[0][0];
-//    NSLog(@"firstElement: %@", firstElement);
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    //[self.tableView setAllowsSelection:NO];
+    
+    [manager GET:@"http://socialplanmaking.herokuapp.com/get_friends/friends" parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"ResponseObject");
+             NSLog(@"The size of responseObject is: %i",[responseObject count]);
+             self.friends = responseObject[0];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error");
+             NSLog(@"Localized error: %@",[error localizedDescription]);
+         }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,7 +80,10 @@
     //cell.backgroundColor = [UIColor orangeColor];
 
     // Configure the cell...
-    cell.textLabel.text = self.friends[indexPath.row];
+    NSDictionary * friendObj =  self.friends[indexPath.row];
+    NSLog(@"The name is: %@",friendObj[@"friend_name"]);
+    //cell.textLabel.text = friendObj[@"friend_name"];
+    cell.textLabel.text = @"ot";
     return cell;
 }
 

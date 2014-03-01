@@ -14,5 +14,7 @@
 @property NSMutableArray * schedule;
 @property NSMutableArray * idsOfFriends;
 @property NSMutableArray * activities;
+@property (nonatomic,strong) NSMutableArray * friends;
+
 
 @end

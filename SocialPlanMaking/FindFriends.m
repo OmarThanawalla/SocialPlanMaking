@@ -88,6 +88,7 @@
         // Configure the cell...
         NSDictionary * dict = self.friends[indexPath.row];
         cell.Name.text =dict[@"name"];
+        NSLog(@"Facebook id: %@",dict[@"id"]);
         return cell;
     }
     else if (indexPath.row == [self.friends count]) {
@@ -108,16 +109,59 @@
         // Configure the cell...
         NSDictionary * otherDict = self.invites[(indexPath.row - [self.friends count] -1 )];
         cell.Name.text = otherDict[@"name"];
+        NSLog(@"Facebook id: %@",otherDict[@"id"]);
+        
         return cell;
     }
     
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //FindFriendsCell * myCell = [tableView cellForRowAtIndexPath:indexPath];
+    if(indexPath.row < [self.friends count])
+    {
+        NSDictionary * dict = self.friends[indexPath.row];
+        NSLog(@"This is dict: %@",dict);
+        NSLog(@"assigning: %@",dict[@"id"]);
+        self.friendID = dict[@"id"];
+        NSLog(@"This is myNumber: %@", self.friendID);
+        
+        [self callServerToMakeFriends];
+    }
+}
+
+-(void)callServerToMakeFriends
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
+    
+    //get user id
+    params[@"user_id"] = [defaults objectForKey:@"user_id"];
+    
+    //get auth tok
+    params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
+    
+    params[@"to_friend"] = self.friendID;
+    
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    
+    [manager GET:@"http://socialplanmaking.herokuapp.com/create_friendship/friend" parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"ResponseObject");
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error");
+             NSLog(@"Localized error: %@",[error localizedDescription]);
+         }];
+}
 
 
 - (IBAction)friendAllBtn:(id)sender {
     NSLog(@"Friend All btn pushed");
+    //[self callServerToMakeFriends: self.friends];
 }
 
 

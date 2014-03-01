@@ -13,7 +13,9 @@
 @property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSMutableArray * friends;
 @property (strong, nonatomic) NSMutableArray * invites;
+@property (strong, nonatomic) NSMutableArray * friendsToRequest;
 
+@property (strong, nonatomic) NSNumber * friendID;
 
 - (IBAction)friendAllBtn:(id)sender;
 
