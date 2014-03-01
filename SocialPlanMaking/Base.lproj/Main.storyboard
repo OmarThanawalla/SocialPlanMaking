@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="2533" y="-216"/>
         </scene>
-        <!--View Controller - When is good?-->
+        <!--Calendar ContainerVC - When is good?-->
         <scene sceneID="l3N-fx-zNn">
             <objects>
-                <viewController id="LMF-5z-Oyz" sceneMemberID="viewController">
+                <viewController id="LMF-5z-Oyz" customClass="CalendarContainerVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P0w-ou-OBk"/>
                         <viewControllerLayoutGuide type="bottom" id="WCs-5x-coT"/>
@@ -264,7 +264,7 @@
                     <navigationItem key="navigationItem" title="When is good?" id="eYQ-yS-43T">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="3GG-zz-Abe">
                             <connections>
-                                <segue destination="euC-K2-d59" kind="push" id="sET-a3-rw8"/>
+                                <segue destination="euC-K2-d59" kind="push" identifier="pushChooseFriends" id="sET-a3-rw8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
