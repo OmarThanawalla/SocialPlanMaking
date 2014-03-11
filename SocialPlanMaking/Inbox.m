@@ -31,32 +31,22 @@
     NSLog(@"Inbox: ViewDidLoad");
     self.title = @"Inbox of Activities";
     
-    [self refresh:nil];
-    //First time download
     [self UserDetermineCredentials];
-    
-
-    
-
 }
 
 -(void)UserDetermineCredentials
 {
-    BOOL LoggedIn = NO;
-    
-    //1. Grab Credentials from Apple Keychain - if empty  LoggedIn = false
-    //3. Else Logged in true
+
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString * auth = [defaults objectForKey:@"auth_token"];
-    NSString * user_id = [defaults objectForKey:@"user_id"];
-    NSLog(@"these are you creds: %@, %@",auth, user_id);
-    
-    
-    [defaults synchronize];
+    NSLog(@"these are you creds: %@",auth);
 
+    //Clear to prevent registration from showing up
+    //[defaults setObject:nil forKey:@"auth_token"];
     
-    if(LoggedIn)
+    //If there exists an auth token do nothing
+    if([defaults objectForKey:@"auth_token"]!=nil  && ![[defaults objectForKey:@"auth_token"] isEqualToString:@""])
     {
         //Show Inbox
         //Aka Do Nothing
@@ -123,12 +113,11 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
-    //get user id
-    params[@"user_id"] = [defaults objectForKey:@"user_id"];
+
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
-    [manager GET:@"http://socialplanmaking.herokuapp.com/inbox_activities/retrieve" parameters:params
+    [manager GET:@"http://socialplanmaking.herokuapp.com/inbox_activities" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"ResponseObject: %@",responseObject);
              self.temp = responseObject;

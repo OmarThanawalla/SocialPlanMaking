@@ -32,9 +32,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
-    //get user id
-    params[@"user_id"] = [defaults objectForKey:@"user_id"];
-    
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
@@ -54,12 +51,6 @@
              NSLog(@"Error");
              NSLog(@"Localized error: %@",[error localizedDescription]);
          }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -131,9 +122,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
-    //get user id
-    params[@"user_id"] = [defaults objectForKey:@"user_id"];
-    
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
@@ -157,7 +145,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     
-    [manager GET:@"http://socialplanmaking.herokuapp.com/create_event/event" parameters:params
+    [manager GET:@"http://socialplanmaking.herokuapp.com/create_event" parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"ResponseObject");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -183,4 +171,9 @@
     return outbound;
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 @end

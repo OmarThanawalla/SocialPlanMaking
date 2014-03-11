@@ -73,8 +73,7 @@
     //make a network call to the server with token info
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSDictionary *parameters = @{@"user_id": [defaults objectForKey:@"user_id"],
-                                 @"auth_token": [defaults objectForKey: @"auth_token"],
+    NSDictionary *parameters = @{@"auth_token": [defaults objectForKey: @"auth_token"],
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

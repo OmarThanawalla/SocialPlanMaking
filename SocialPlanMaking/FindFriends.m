@@ -37,20 +37,7 @@
 /* Get list of friends */
 -(void) viewWillAppear:(BOOL)animated
 {
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    
-//    NSDictionary * parameters = @{@"accessToken" : self.accessToken};
-    
-    //Networking code
-    /*
-    [manager GET:@"http://" parameters:parameters
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    */
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,9 +128,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
     
-    //get user id
-    params[@"user_id"] = [defaults objectForKey:@"user_id"];
-    
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
     
@@ -157,7 +141,6 @@
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"ResponseObject");
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error");
              NSLog(@"Localized error: %@",[error localizedDescription]);
          }];
 }

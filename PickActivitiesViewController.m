@@ -133,17 +133,14 @@
     if ([self.Act1.text isEqualToString:@""]) {
         self.Act1.text = [suggestion objectAtIndex:0];
         self.Loc1.text = [suggestion objectAtIndex:1];
-        [self.Act1 becomeFirstResponder];
     }else if ([self.Act2.text isEqualToString:@""])
     {
         self.Act2.text = [suggestion objectAtIndex:0];
         self.Loc2.text = [suggestion objectAtIndex:1];
-        [self.Act2 becomeFirstResponder];
     }else if([self.Act3.text isEqualToString:@""])
     {
         self.Act3.text = [suggestion objectAtIndex:0];
         self.Loc3.text = [suggestion objectAtIndex:1];
-        [self.Act3 becomeFirstResponder];
     }
     else{
         //do nothing, everyone is full
