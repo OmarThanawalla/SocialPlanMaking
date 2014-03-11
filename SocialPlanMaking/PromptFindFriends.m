@@ -57,10 +57,12 @@
                                       [appDelegate sessionStateChanged:session state:state error:error];
                                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                       
-                                      [defaults setObject:self.accessToken forKey:@"accessToken"];
-                                      [defaults synchronize];
-                                      assert(self.accessToken);
-                                      [self sendFBToken];
+                                      if(self.accessToken)
+                                      {
+                                          [defaults setObject:self.accessToken forKey:@"accessToken"];
+                                          [defaults synchronize];
+                                          [self sendFBToken];
+                                      }
                                   }];
     
 }
