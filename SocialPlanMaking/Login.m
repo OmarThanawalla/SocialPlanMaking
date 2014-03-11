@@ -47,6 +47,14 @@
     NSDictionary * params = @{@"EmailAddress": self.EmailAddress.text,
                               @"Password": self.Password.text};
     
+    if ((self.EmailAddress.text == nil) || (self.Password.text == nil)) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                                        message:@"Email or Password field is blank"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
