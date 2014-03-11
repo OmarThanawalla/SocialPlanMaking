@@ -58,14 +58,18 @@
                                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                       
                                       [defaults setObject:self.accessToken forKey:@"accessToken"];
-                                      
+                                      [defaults synchronize];
+                                      assert(self.accessToken);
+                                      [self sendFBToken];
                                   }];
     
-    
+}
+
+
+-(void)sendFBToken
+{
     //make a network call to the server with token info
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    //NSLog(@"user_id")
     
     NSDictionary *parameters = @{@"user_id": [defaults objectForKey:@"user_id"],
                                  @"auth_token": [defaults objectForKey: @"auth_token"],
@@ -73,19 +77,18 @@
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        NSLog(@"Success");
-        //NSLog(@"Response: %@",responseObject);
-        self.friends = responseObject[@"friended"];
-        self.invites = responseObject[@"not_friended"];
-        
-        NSLog(@"self.friends: %i",[self.friends count]);
-        NSLog(@"self.invites: %i",[self.invites count]);
-        [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Fail");
-    }];
-    
+     {
+         NSLog(@"Success");
+         //NSLog(@"Response: %@",responseObject);
+         self.friends = responseObject[@"friended"];
+         self.invites = responseObject[@"not_friended"];
+         
+         NSLog(@"self.friends: %i",[self.friends count]);
+         NSLog(@"self.invites: %i",[self.invites count]);
+         [self performSegueWithIdentifier:@"ShowFriends" sender:nil];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@",[error localizedDescription]);
+     }];
 }
 
 /* Send accessToken to FindFriends VC */
