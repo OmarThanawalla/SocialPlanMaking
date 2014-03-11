@@ -34,21 +34,17 @@
     
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
-    
-    
-    
+
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    
-    [manager GET:@"http://socialplanmaking.herokuapp.com/get_friends/friends" parameters:params
+
+    [manager GET:@"http://socialplanmaking.herokuapp.com/get_friends" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"ResponseObject %@",responseObject);
              NSLog(@"The size of responseObject is: %i",[responseObject count]);
              self.friends = responseObject;
              [self.tableView reloadData];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error");
              NSLog(@"Localized error: %@",[error localizedDescription]);
          }];
 }

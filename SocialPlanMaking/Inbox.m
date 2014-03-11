@@ -34,6 +34,12 @@
     [self UserDetermineCredentials];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"viewWillAppear");
+    [self UserDetermineCredentials];
+}
+
 -(void)UserDetermineCredentials
 {
 

@@ -39,35 +39,29 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSDictionary *parameters = @{@"user_id": [defaults objectForKey:@"user_id"],
-                                 @"auth_token": [defaults objectForKey: @"auth_token"],
-                                 @"fb_token" : [defaults objectForKey:@"accessToken"],
+    assert([defaults objectForKey: @"auth_token"]);
+    assert([defaults objectForKey: @"currentEventID"]);
+    
+    NSDictionary *parameters = @{@"auth_token": [defaults objectForKey: @"auth_token"],
                                  @"event_id" : [defaults objectForKey:@"currentEventID"]
                                  };
+    
+    
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://socialplanmaking.herokuapp.com/read_event/event" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    [manager GET:@"http://socialplanmaking.herokuapp.com/read_event" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         NSLog(@"Success");
          NSLog(@"Response: %@",responseObject);
-         
          self.responseObjectJSON = responseObject;
          [self.tableView reloadData];
          //Load up the View
 
          //[self performSegueWithIdentifier:@"ShowFriends" sender:nil];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         NSLog(@"Fail");
          NSLog(@"Error: %@",[error localizedDescription]);
          //alert box
      }];
 
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -171,5 +165,13 @@
 
 - (IBAction)refresh:(id)sender {
     [self loadInboxIndepthData];
+}
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

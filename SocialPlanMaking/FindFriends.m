@@ -114,7 +114,7 @@
         NSLog(@"This is dict: %@",dict);
         NSLog(@"assigning: %@",dict[@"id"]);
         self.friendID = dict[@"id"];
-        NSLog(@"This is myNumber: %@", self.friendID);
+        NSLog(@"self.friendID %@", self.friendID);
         
         [self callServerToMakeFriends];
         FindFriendsCell * myCell = (FindFriendsCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -130,16 +130,15 @@
     
     //get auth tok
     params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
-    
     params[@"to_friend"] = self.friendID;
     
     //Networking code
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     
-    [manager GET:@"http://socialplanmaking.herokuapp.com/create_friendship/friend" parameters:params
+    [manager GET:@"http://socialplanmaking.herokuapp.com/create_friendship" parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"ResponseObject");
+             NSLog(@"ResponseObject: %@",responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Localized error: %@",[error localizedDescription]);
          }];

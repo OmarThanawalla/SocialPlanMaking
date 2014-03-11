@@ -40,8 +40,9 @@
 
 - (IBAction)FindFriendsFacebookBtnPushed:(id)sender {
     NSLog(@"FindFriendsFacebookBtn pushed");
-    self.findFBBtn.enabled = NO;
-
+    //self.findFBBtn.enabled = NO;
+    [self animateActIndicator];
+    
     [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
                                        allowLoginUI:YES
                                   completionHandler:^(FBSession *session, FBSessionState state, NSError *error)
@@ -57,6 +58,7 @@
                                       [appDelegate sessionStateChanged:session state:state error:error];
                                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                       
+                                      //if valid response
                                       if(self.accessToken)
                                       {
                                           [defaults setObject:self.accessToken forKey:@"accessToken"];
@@ -67,17 +69,26 @@
     
 }
 
+-(void) animateActIndicator
+{
+    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.center=self.view.center;
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+}
 
 -(void)sendFBToken
 {
     //make a network call to the server with token info
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSLog(@"fb_token is: %@", [defaults objectForKey:@"accessToken"]);
+    
     NSDictionary *parameters = @{@"auth_token": [defaults objectForKey: @"auth_token"],
                                  @"fb_token" : [defaults objectForKey:@"accessToken"]
                                  };
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends/findfriends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
+    [manager GET:@"http://socialplanmaking.herokuapp.com/find_facebook_friends" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          NSLog(@"Success");
          //NSLog(@"Response: %@",responseObject);
@@ -107,5 +118,14 @@
 
 - (IBAction)FriendSkipBtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)LogOut:(id)sender {
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"" forKey:@"auth_token"];
+    [defaults synchronize];
+    
+    UITabBarController * myTabBar = [self tabBarController];
+    self.tabBarController.selectedIndex = 0;
 }
 @end
