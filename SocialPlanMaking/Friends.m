@@ -94,6 +94,8 @@
     if(indexPath.row == 0)
     {
         //Find FB Friends
+        NSLog(@"perform segue FindFBFriends");
+        [self performSegueWithIdentifier:@"FindFBFriends" sender:nil];
     }
 
 }
