@@ -16,7 +16,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="cI3-PJ-p8q" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
-                        <segue destination="8A5-eg-Ayd" kind="relationship" relationship="viewControllers" id="L5t-Jq-MCB"/>
                         <segue destination="n3F-gC-7VX" kind="relationship" relationship="viewControllers" id="Hjp-if-wgI"/>
                     </connections>
                 </tabBarController>
@@ -935,13 +934,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Find Friends" id="B4N-nb-KlH">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="j7f-wr-Hm5">
-                            <connections>
-                                <action selector="LogOut:" destination="o4T-RW-8W3" id="Zyk-jB-VCZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Find Friends" id="B4N-nb-KlH"/>
                     <connections>
                         <outlet property="findFBBtn" destination="umx-Ak-34j" id="Uwg-qm-ZC1"/>
                         <segue destination="oea-We-Z9V" kind="push" identifier="ShowFriends" id="qNl-y9-b3h"/>
@@ -974,7 +967,13 @@
                             <outlet property="delegate" destination="lhz-ZE-7g4" id="6dg-Zy-LCA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="b8A-rg-Z2G"/>
+                    <navigationItem key="navigationItem" title="Friends" id="b8A-rg-Z2G">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="Bix-WK-l2m">
+                            <connections>
+                                <action selector="LogOut:" destination="lhz-ZE-7g4" id="Po8-nG-fAy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="o4T-RW-8W3" kind="push" identifier="FindFBFriends" id="NEf-6y-fdJ"/>
                     </connections>
@@ -1081,26 +1080,10 @@
             <point key="canvasLocation" x="2286" y="1272"/>
         </scene>
         <!--Navigation Controller - Friends-->
-        <scene sceneID="qwj-RJ-H5G">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8A5-eg-Ayd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="Fdl-CP-aQQ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dnx-1E-LpS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7bo-vu-XXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="621" y="650"/>
-        </scene>
-        <!--Navigation Controller - Item-->
         <scene sceneID="6Z3-Ca-QIc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3F-gC-7VX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9BT-7j-ag3"/>
+                    <tabBarItem key="tabBarItem" title="Friends" id="9BT-7j-ag3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5N5-vz-2Ke">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

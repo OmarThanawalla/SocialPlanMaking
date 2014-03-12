@@ -12,7 +12,6 @@
 @property (nonatomic,strong) NSString * accessToken;
 - (IBAction)FindFriendsFacebookBtnPushed:(id)sender;
 - (IBAction)FriendSkipBtn:(id)sender;
-- (IBAction)LogOut:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *findFBBtn;
 

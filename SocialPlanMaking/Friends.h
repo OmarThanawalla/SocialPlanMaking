@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSMutableArray * staticDataArr;
 @property (nonatomic, strong) NSMutableArray * FriendRequests;
 @property (nonatomic, strong) NSMutableArray * Friends;
+- (IBAction)LogOut:(id)sender;
 
 @end

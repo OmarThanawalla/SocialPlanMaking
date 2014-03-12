@@ -14,6 +14,16 @@
 
 @implementation Friends
 
+- (IBAction)LogOut:(id)sender {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"" forKey:@"auth_token"];
+    [defaults synchronize];
+    
+    UITabBarController * myTabBar = [self tabBarController];
+    self.tabBarController.selectedIndex = 0;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
