@@ -23,6 +23,7 @@
 		A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D314F1897A1EC0023DEE7 /* DateCell.m */; };
 		A74D31941898B3980023DEE7 /* ActivityInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31931898B3980023DEE7 /* ActivityInformationCell.m */; };
 		A74D31971898B8910023DEE7 /* WhenIsGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */; };
+		A756848D18CFDCEA006A7C7F /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = A756848C18CFDCEA006A7C7F /* Friends.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -89,6 +90,8 @@
 		A74D31931898B3980023DEE7 /* ActivityInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityInformationCell.m; sourceTree = "<group>"; };
 		A74D31951898B8910023DEE7 /* WhenIsGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhenIsGoodCell.h; sourceTree = "<group>"; };
 		A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhenIsGoodCell.m; sourceTree = "<group>"; };
+		A756848B18CFDCEA006A7C7F /* Friends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friends.h; sourceTree = "<group>"; };
+		A756848C18CFDCEA006A7C7F /* Friends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friends.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -289,6 +292,8 @@
 		A7D925121892F2E600030B6D /* Tab2 */ = {
 			isa = PBXGroup;
 			children = (
+				A756848B18CFDCEA006A7C7F /* Friends.h */,
+				A756848C18CFDCEA006A7C7F /* Friends.m */,
 				A7633B70188FA80900D1BE77 /* SecondViewController.h */,
 				A7633B71188FA80900D1BE77 /* SecondViewController.m */,
 			);
@@ -460,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A756848D18CFDCEA006A7C7F /* Friends.m in Sources */,
 				A733F970189DCC2B005BD4B6 /* PromptFindFriends.m in Sources */,
 				A74D308B189384430023DEE7 /* PickActivitiesViewController.m in Sources */,
 				A74D31501897A1EC0023DEE7 /* DateCell.m in Sources */,
