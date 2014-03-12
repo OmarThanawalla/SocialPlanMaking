@@ -7,6 +7,7 @@
 //
 
 #import "Friends.h"
+#import "PendingFriendRequestsViewController.h"
 
 @interface Friends ()
 
@@ -49,7 +50,25 @@
 
 -(void) loadFriendsNetworkCall
 {
+    //Networking code
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
+    
+    //get auth tok
+    params[@"auth_token"] = [defaults objectForKey:@"auth_token"];
+    
+    [manager GET:@"http://socialplanmaking.herokuapp.com/get_friends_pending_approval" parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"ResponseObject: %@",responseObject);
+             self.FriendRequests = responseObject;
+             [self.tableView reloadData];
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"%@", [error localizedDescription]);
+         }];
+
 }
 
 -(void) loadFriends
@@ -78,7 +97,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return ([self.staticDataArr count] + [self.FriendRequests count] + [self.Friends count]);
+    return ([self.staticDataArr count] + 1 + [self.Friends count]);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,7 +108,15 @@
     // Configure the cell...
     if (indexPath.row == 0) {
         cell.textLabel.text = self.staticDataArr[indexPath.row];
-    }else
+    }else if (indexPath.row == 1)
+    {
+        int friendCount = [self.FriendRequests count];
+        NSString * stringFriendCount = [NSMutableString stringWithFormat:@"%d",friendCount];
+        NSString * lbl = @"Friend Requests: ";
+        
+        cell.textLabel.text = [NSString stringWithFormat:stringFriendCount,lbl];
+    }
+    else
     {
         //Friend Request Cell
         
@@ -107,7 +134,37 @@
         NSLog(@"perform segue FindFBFriends");
         [self performSegueWithIdentifier:@"FindFBFriends" sender:nil];
     }
+    else if (indexPath.row == 1)
+    {
+        //Dipslay list of pending friend requests
+        [self performSegueWithIdentifier:@"displayPending" sender:nil];
+    }
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"displayPending"])
+    {
+        PendingFriendRequestsViewController * destVC = segue.destinationViewController;
+        destVC.pendingRequests = self.FriendRequests;
+    }
+}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    NSLog(@"prepareForSegue: %@",    segue.identifier);
+//    Calendar * destVC = segue.destinationViewController;
+//    if ([segue.identifier isEqualToString:@"containCalendar"]) {
+//        self.myCalObj = destVC;
+//    }
+//    else if ([segue.identifier isEqualToString:@"pushChooseFriends"])
+//    {
+//        ChooseFriends * myChFri =  segue.destinationViewController;
+//        myChFri.schedule = self.myCalObj.schedule;
+//        myChFri.activities = self.activities;
+//    }
+//    
+//}
 
 @end

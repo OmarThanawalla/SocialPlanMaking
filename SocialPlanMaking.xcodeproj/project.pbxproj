@@ -24,6 +24,7 @@
 		A74D31941898B3980023DEE7 /* ActivityInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31931898B3980023DEE7 /* ActivityInformationCell.m */; };
 		A74D31971898B8910023DEE7 /* WhenIsGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */; };
 		A756848D18CFDCEA006A7C7F /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = A756848C18CFDCEA006A7C7F /* Friends.m */; };
+		A756849318CFEE2A006A7C7F /* PendingFriendRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A756849218CFEE2A006A7C7F /* PendingFriendRequestsViewController.m */; };
 		A7633B59188FA80900D1BE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B58188FA80900D1BE77 /* Foundation.framework */; };
 		A7633B5B188FA80900D1BE77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */; };
 		A7633B5D188FA80900D1BE77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7633B5C188FA80900D1BE77 /* UIKit.framework */; };
@@ -92,6 +93,8 @@
 		A74D31961898B8910023DEE7 /* WhenIsGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhenIsGoodCell.m; sourceTree = "<group>"; };
 		A756848B18CFDCEA006A7C7F /* Friends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friends.h; sourceTree = "<group>"; };
 		A756848C18CFDCEA006A7C7F /* Friends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friends.m; sourceTree = "<group>"; };
+		A756849118CFEE2A006A7C7F /* PendingFriendRequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingFriendRequestsViewController.h; sourceTree = "<group>"; };
+		A756849218CFEE2A006A7C7F /* PendingFriendRequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingFriendRequestsViewController.m; sourceTree = "<group>"; };
 		A7633B55188FA80900D1BE77 /* SocialPlanMaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialPlanMaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7633B58188FA80900D1BE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7633B5A188FA80900D1BE77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -316,6 +319,8 @@
 				A733F96F189DCC2B005BD4B6 /* PromptFindFriends.m */,
 				A7633B9C1892301000D1BE77 /* Login.h */,
 				A7633B9D1892301000D1BE77 /* Login.m */,
+				A756849118CFEE2A006A7C7F /* PendingFriendRequestsViewController.h */,
+				A756849218CFEE2A006A7C7F /* PendingFriendRequestsViewController.m */,
 				A7D92515189300E000030B6D /* FindFriends.h */,
 				A7D92516189300E000030B6D /* FindFriends.m */,
 				A7D9251A1893070200030B6D /* FindFriendsCell.h */,
@@ -475,6 +480,7 @@
 				A7D92517189300E000030B6D /* FindFriends.m in Sources */,
 				A7633B981890203900D1BE77 /* ChooseFriends.m in Sources */,
 				A734A78418C1963700C2E8BE /* KeychainItemWrapper.m in Sources */,
+				A756849318CFEE2A006A7C7F /* PendingFriendRequestsViewController.m in Sources */,
 				A7633B72188FA80900D1BE77 /* SecondViewController.m in Sources */,
 				A7633B9E1892301000D1BE77 /* Login.m in Sources */,
 				A7633B92188FAF2300D1BE77 /* Inbox.m in Sources */,

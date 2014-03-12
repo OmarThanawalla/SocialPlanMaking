@@ -942,7 +942,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgc-X9-Vq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="1172"/>
+            <point key="canvasLocation" x="1737" y="1016"/>
+        </scene>
+        <!--Pending Friend Requests View Controller - Friend Requests-->
+        <scene sceneID="jTe-86-Jik">
+            <objects>
+                <tableViewController id="Nfz-pW-amX" customClass="PendingFriendRequestsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bBU-gJ-8KD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="rrL-80-Q2Y">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rrL-80-Q2Y" id="Nra-or-kKe">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nfz-pW-amX" id="p5t-cM-SzD"/>
+                            <outlet property="delegate" destination="Nfz-pW-amX" id="tCG-v4-OSh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Friend Requests" id="aSk-Ll-nbu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-IP-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="1781"/>
         </scene>
         <!--Friends - Friends-->
         <scene sceneID="A6j-Cc-0xC">
@@ -976,6 +1005,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="o4T-RW-8W3" kind="push" identifier="FindFBFriends" id="NEf-6y-fdJ"/>
+                        <segue destination="Nfz-pW-amX" kind="push" identifier="displayPending" id="adj-kW-hMY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frU-7u-4wS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1077,7 +1107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKZ-iN-3u0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="1272"/>
+            <point key="canvasLocation" x="2336" y="1016"/>
         </scene>
         <!--Navigation Controller - Friends-->
         <scene sceneID="6Z3-Ca-QIc">
